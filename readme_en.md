@@ -1,4 +1,4 @@
-# iDyer Unit - Plastic Drying System for 3D Printers Based on Klipper
+# iDryer Unit - Plastic Drying System for 3D Printers
 ![iDryer Unit Master](img/IMG_E2204.jpg)
 
 This project represents a plastic drying control system for 3D printers running on Klipper firmware.
@@ -10,9 +10,9 @@ This project represents a plastic drying control system for 3D printers running 
 - **Dryer Body**: The body is 3D-printed.
 - **Klipper Integration**: All drying process information is displayed in the Klipper interface for easy monitoring and control.
 - **Master-Slave Architecture**: One dryer is equipped with an MCU and acts as the master, while other dryers act as slaves.
-- **Slave Connection**: Slaves are connected to the master using patch cords through Ethernet ports for reliable communication.
+- **Slave Connection**: Slaves are connected to the master using patch cords through RJ45-8P/8C ports for reliable communication.
 - **Support for Up to Four Dryers**: Each dryer can handle one or two spools of plastic simultaneously.
-- **Safety**: Klipper safety algorithms and the use of a KSD9700 thermostat at 130°C for emergency prevention make the system safe for household use.
+- **Safety**: Klipper safety algorithms and the use of a KSD9700 thermal protector at 130°C for emergency prevention make the system safe for household use.
 
 ## Benefits of Use
 
@@ -24,14 +24,14 @@ This project represents a plastic drying control system for 3D printers running 
 ## Technical Details
 
 - **MCU**: Used for controlling the master dryer and coordinating the work of slaves.
-- **KSD9700 Thermostat**: A bimetallic thermostat at 130°C ensures safety in case of emergency by disconnecting the heater.
+- **KSD9700 thermal protector**: A bimetallic thermal protector at 130°C ensures safety in case of emergency by disconnecting the heater.
 - **Temperature Mode**: Drying is carried out at temperatures up to 90°C, suitable for most types of plastic.
-- **Connection Interfaces**: Ethernet ports are used for connections between dryers, simplifying assembly and providing a reliable connection.
+- **Connection Interfaces**: RJ45-8P/8C ports are used for connections between dryers, simplifying assembly and providing a reliable connection.
 
 ## Installation and Setup
 
 1. **Hardware Assembly**: Assemble the master dryer with an MCU and the necessary slaves.
-2. **Connection**: Connect the slaves to the master using patch cords through Ethernet ports.
+2. **Connection**: Connect the slaves to the master using patch cords through RJ45-8P/8C ports.
 3. **Klipper Setup**: Integrate the drying system into the Klipper configuration.
 4. **Testing**: Check the operation of the system and verify correct data display in the Klipper interface.
 
@@ -39,8 +39,8 @@ This project represents a plastic drying control system for 3D printers running 
 
 - 3D printer with Klipper firmware installed.
 - MCU for the master dryer.
-- KSD9700 thermostat at 130°C for each dryer.
-- Ethernet patch cords and ports to connect slaves to the master.
+- KSD9700 thermal protector at 130°C for each dryer.
+- RJ45-8P/8C patch cords and ports to connect slaves to the master.
 
 ---
 
@@ -132,6 +132,10 @@ Add a line to include the `iDryer.cfg` configuration file in your `printer.cfg` 
 ### Connecting iDryer MCU
 
 [Find the serial port of your microcontroller and specify it in the configuration file:](#https://www.klipper3d.org/Installation.html#building-and-flashing-the-micro-controller)
+
+```
+ls /dev/serial/by-id/*
+```
 
 ```ini
 [mcu]
