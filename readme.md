@@ -140,6 +140,7 @@ sudo umount /mnt
 ```
 ls /dev/serial/by-id/*
 ```
+В файле iDryer.cfg замените id MCU найденным выше 
 
 ```ini
 [mcu]
