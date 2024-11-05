@@ -1,3 +1,5 @@
+### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
+
 # iDryer Unit - система сушки пластика для 3D-принтеров на базе Klipper
 
 ![iDryer Unit Master](img/IMG_E2204.jpg)
@@ -328,6 +330,13 @@ iDryer_OFF  ; Отключить нагрев сушилки
 ## Обратная связь
 
 Если у вас есть вопросы или предложения по улучшению системы, пожалуйста, создайте issue в этом репозитории или свяжитесь напрямую.
+
+Или посетите группу в телеграм
+
+### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer) 
+
+[![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
+
 
 ## Примечания
 

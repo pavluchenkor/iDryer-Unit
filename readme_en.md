@@ -1,3 +1,5 @@
+### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
+
 # iDryer Unit - Plastic Drying System for 3D Printers Based on Klipper
 ![iDryer Unit Master](img/IMG_E2204.jpg)
 
@@ -323,6 +325,14 @@ iDryer_OFF  ; Turn off the dryer heater
 ## Feedback
 
 If you have questions or suggestions for improving the system, please create an issue in this repository or contact us directly.
+
+Or visit the Telegram group
+
+### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer) 
+
+[![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
+
+
 
 ## Notes
 
