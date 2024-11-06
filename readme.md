@@ -1,7 +1,7 @@
-### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
+### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
 
 # iDryer Unit - система сушки пластика для 3D-принтеров на базе Klipper
-
+### В разработке
 ![iDryer Unit Master](img/IMG_E2204.jpg)
 
 Этот проект представляет собой систему управления сушкой пластика для 3D-принтеров, работающую под управлением прошивки Klipper и включающую до четырех сушилок с индивидуальными параметрами работы.
@@ -71,6 +71,7 @@
   - [Настройка датчиков температуры и влажности](#настройка-датчиков-температуры-и-влажности)
   - [Макросы G-кода](#макросы-г-кода)
 - [Использование](#использование)
+- [Модели для 3д печати](#модели-для-печати)
 - [Примечания](#примечания)
 
 ## Требования
@@ -327,6 +328,24 @@ DRY_UNIT1 UNIT_TEMPERATURE=60
 iDryer_OFF  ; Отключить нагрев сушилки
 ```
 
+### Модели для печати
+!!! success "🛠️ Файлы для печати"
+
+    **[Корпус](CAD/Set%201.3mf)**
+    **[Детали](CAD/Set%101.3mf)**
+    **[Таблички](CAD/Nameplate%20UNIT.3mf)**
+
+### Файлы конфигурации
+!!! success "📁 Файлы конфигурации"
+
+    **[iDryer](iDryer.cfg)**
+    **[U1](U1.cfg)**
+    **[U2](U2.cfg)**
+    **[U3](U3.cfg)**
+    **[U4](U4.cfg)**
+  
+
+
 ## Обратная связь
 
 Если у вас есть вопросы или предложения по улучшению системы, пожалуйста, создайте issue в этом репозитории или свяжитесь напрямую.
@@ -336,6 +355,9 @@ iDryer_OFF  ; Отключить нагрев сушилки
 ### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer) 
 
 [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
+
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
+
 
 
 ## Примечания
