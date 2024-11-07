@@ -324,6 +324,33 @@ DRY_UNIT1 UNIT_TEMPERATURE=60
 iDryer_OFF  ; Turn off the dryer heater
 ```
 
+### CAD models
+!!! success "🛠️ Printing files"
+
+    **[Enclosure](CAD/Set%201.3mf)**
+    **[Parts](CAD/Set%101.3mf)**
+    **[Nameplates](CAD/Nameplate%20UNIT.3mf)**
+    
+    Enclosure Print Settings:
+
+    - Material: ABS, ABS-CF, ABS-GF, PP
+
+    - Line Width: 0.6 mm
+
+    - Number of Perimeters: 1
+
+    - Infill Density: 10%
+
+### Configuration files
+!!! success "📁 Configuration files"
+
+    **[iDryer](iDryer.cfg)**
+    **[U1](U1.cfg)**
+    **[U2](U2.cfg)**
+    **[U3](U3.cfg)**
+    **[U4](U4.cfg)**
+  
+
 ## Feedback
 
 If you have questions or suggestions for improving the system, please create an issue in this repository or contact us directly.
