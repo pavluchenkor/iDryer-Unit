@@ -1,3 +1,5 @@
+![iDryer Unit Master](img/Screenshot_3.png)
+
 ### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
 
 # iDryer Unit - Plastic Drying System for 3D Printers Based on Klipper
