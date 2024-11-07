@@ -341,6 +341,8 @@ iDryer_OFF  ; Turn off the dryer heater
 
     - Infill Density: 10%
 
+    All parts are printed without supports
+
 ### Configuration files
 !!! success "📁 Configuration files"
 
