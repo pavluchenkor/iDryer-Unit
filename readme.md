@@ -1,6 +1,6 @@
 ![iDryer Unit Master](img/Screenshot_3.png)
 
-### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
 
 # iDryer Unit - система сушки пластика для 3D-принтеров на базе Klipper
 ### В разработке
@@ -191,11 +191,14 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_DE63581213745233-if00
 ### Настройка нагревателя
 
 ```ini
-[heater_generic iDryer_M_Heater]
-heater_pin: H0
+[heater_generic iDryer_U1_Heater]
+heater_pin: H_U1
+# if your iDryer is used as a second MCU use
+# heater_pin: iDryer:H_U1
+# and change everywhere!
 max_power: 1
-sensor_type: NTC 100K MGB18-104F39050L32
-sensor_pin: T0
+sensor_type: NTC 100K MGB18-104F39050L32 #Generic 3950
+sensor_pin: T_U1
 control: pid
 pwm_cycle_time: 0.3
 min_temp: 0
@@ -208,10 +211,10 @@ pid_Kd=48.150
 ### Настройка вентилятора
 
 ```ini
-[heater_fan Master_Fan]
+[heater_fan Fan_U1]
 fan_speed: 1
-pin: FAN0
-heater: iDryer_M_Heater
+pin: FAN_U1
+heater: iDryer_U1_Heater
 heater_temp: 55
 ```
 
@@ -220,11 +223,12 @@ heater_temp: 55
 Вы можете использовать любой датчик температуры и влажности, поддерживаемый Klipper. В примере используется датчик **SHT3X**, подключённый через интерфейс I2C. Датчики для сушилок U1 и U2 подключены к одной шине I2C, а датчики для сушилок U3 и U4 подключены к другой шине I2C. Адреса датчиков на каждой шине должны отличаться:
 
 ```ini
-[temperature_sensor iDryer_M_Air]
+[temperature_sensor iDryer_U1_Air]
 sensor_type: SHT3X
 i2c_address: 68
-i2c_software_sda_pin: gpio18
-i2c_software_scl_pin: gpio19
+i2c_software_sda_pin: gpio20 #second HW version - green PCB | i2c_software_sda_pin: gpio18 #first HW version - red PCB
+i2c_software_scl_pin: gpio21 #second HW version - green PCB | # i2c_software_scl_pin: gpio19 #first HW version - red PCB
+
 ```
 
 **Примечание:** Если вы используете другой датчик температуры или влажности, проверьте документацию Klipper для соответствующей конфигурации.
@@ -234,66 +238,73 @@ i2c_software_scl_pin: gpio19
 Для управления процессом сушки с возможностью установки температуры для разных материалов, используйте следующие макросы:
 
 ```ini
-[gcode_macro iDryer_OFF]
+[gcode_macro OFF_U1]
 gcode:
-    SET_HEATER_TEMPERATURE HEATER=iDryer_M_Heater TARGET=0
-    UPDATE_DELAYED_GCODE ID=_UPDATE_UNIT1_DATA DURATION=0
-    UPDATE_DELAYED_GCODE ID=_TOGGLE_SERVO1 DURATION=0
+    UPDATE_DELAYED_GCODE ID=_UPDATE_U1 DURATION=0
+    UPDATE_DELAYED_GCODE ID=_TOGGLE_SERVO_U1 DURATION=0
+    SET_HEATER_TEMPERATURE HEATER=iDryer_U1_Heater TARGET=0
 
-[gcode_macro DRY_UNIT1]
-gcode:
-    {% set unit_temp = params.UNIT_TEMPERATURE|default(40)|int %}
-    SET_GCODE_VARIABLE MACRO=DRY_MODE_U1 VARIABLE=temp VALUE={unit_temp}
 
-[gcode_macro ABS_U1]
-variable_unit_temp: 80
-variable_unit_duration: 240
+[gcode_macro PLA_U1]
+variable_unit_temp: 55
+variable_unit_duration: 180
 gcode:
-    DRY_MODE_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
 
-[gcode_macro PA_U1]
-variable_unit_temp: 90
-variable_unit_duration: 240
-gcode:
-    DRY_MODE_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
 
 [gcode_macro PETG_U1]
 variable_unit_temp: 65
 variable_unit_duration: 240
 gcode:
-    DRY_MODE_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
 
-[gcode_macro PLA_U1]
-variable_unit_temp: 55
+
+[gcode_macro TPU_U1]
+variable_unit_temp: 60
+variable_unit_duration: 300
+gcode:
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+
+
+[gcode_macro ABS_U1]
+variable_unit_temp: 80
 variable_unit_duration: 240
 gcode:
-    DRY_MODE_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+
+
+[gcode_macro PA_U1]
+variable_unit_temp: 90
+variable_unit_duration: 240
+gcode:
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+
 ```
 
 ### Макрос для обновления данных:
 
 ```ini
-[delayed_gcode _UPDATE_UNIT1_DATA]
+[delayed_gcode _UPDATE_U1]
 gcode:
-    {% set unit_data = printer['gcode_macro DRY_MODE_U1'] %}
+    {% set unit_data = printer['gcode_macro DRY_U1'] %}
     {% set temperature = unit_data.temp %}
     {% set delta_high =  unit_data.delta_high %}
     
-    { action_respond_info("Unit_1 T: %s H: %.2f%%" %(temperature, printer["sht3x iDryer_M_Air"].humidity)) }
+    # { action_respond_info("Unit_1 T: %s H: %.2f%%" %(temperature, printer["sht3x iDryer_U1_Air"].humidity))}
     
-    {% if printer['temperature_sensor iDryer_M_Air'].temperature|int > temperature|int %}
+    {% if printer['temperature_sensor iDryer_U1_Air'].temperature|int > temperature|int %}
         {% set target_temp = 0|int %}
-    {% elif printer['temperature_sensor iDryer_M_Air'].temperature|int == temperature|int %}
-        {% set target_temp = printer['temperature_sensor iDryer_M_Air'].temperature|int %}
-    {% elif printer['temperature_sensor iDryer_M_Air'].temperature|int < temperature|int %}
-        {% set target_temp = temperature - printer['temperature_sensor iDryer_M_Air'].temperature + temperature + delta_high %}
-        {% if target_temp > temperature + delta_high %}
+    {% elif printer['temperature_sensor iDryer_U1_Air'].temperature|int == temperature|int %}
+        {% set target_temp = printer['temperature_sensor iDryer_U1_Air'].temperature|int %}
+    {% elif printer['temperature_sensor iDryer_U1_Air'].temperature|int < temperature|int %}
+        {% set target_temp = temperature - printer['temperature_sensor iDryer_U1_Air'].temperature + temperature + delta_high%}
+        {% if target_temp > temperature + delta_high %} 
             {% set target_temp = temperature|int + delta_high|int %}
         {% endif %}
     {% endif %}
     
-    SET_HEATER_TEMPERATURE HEATER=iDryer_M_Heater TARGET={target_temp|int}
-    UPDATE_DELAYED_GCODE ID=_UPDATE_UNIT1_DATA DURATION=1
+    SET_HEATER_TEMPERATURE HEATER=iDryer_U1_Heater TARGET={target_temp|int}
+    UPDATE_DELAYED_GCODE ID=_UPDATE_U1 DURATION=1
 ```
 
 ### Макросы для установки температуры:
@@ -333,9 +344,9 @@ iDryer_OFF  ; Отключить нагрев сушилки
 ### Модели для печати
 !!! success "🛠️ Файлы для печати"
 
-    **[Корпус](CAD/Set%201.3mf)**
-    **[Детали](CAD/Set%101.3mf)**
-    **[Таблички](CAD/Nameplate%20UNIT.3mf)**
+    **[Детали](CAD/Set1.3mf)**
+    **[Корпус](CAD/Set2.3mf)**
+    **[Таблички](CAD/NameplateUNIT.3mf)**
 
     Параметры печати корпуса:
 
@@ -352,6 +363,7 @@ iDryer_OFF  ; Отключить нагрев сушилки
 ### Файлы конфигурации
 !!! success "📁 Файлы конфигурации"
 
+
     **[iDryer](iDryer.cfg)**
     **[U1](U1.cfg)**
     **[U2](U2.cfg)**
@@ -366,14 +378,6 @@ iDryer_OFF  ; Отключить нагрев сушилки
 
 Или посетите группу в телеграм
 
-### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer) 
-
-[![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
-
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
-
-
-
 ## Примечания
 
 - Убедитесь в правильности подключения датчиков температуры и влажности (например, SHT3X или другого).
@@ -383,3 +387,17 @@ iDryer_OFF  ; Отключить нагрев сушилки
 
 ***Внимание: Использование нагревательных элементов и управление температурой связано с риском возгорания и повреждения оборудования. Всегда следуйте рекомендациям производителя и соблюдайте меры предосторожности и электробезопасности. Не оставляйте включенные электрические устройства без присмотра.***
 
+
+### Вариант из подручных материалов
+
+Вы можете собрать плату являвшуюся прототипом iDryer Unit самостоятельно и с минимальным бюджетом, это прототип и к нему нужно именно так и относиться
+
+[Проект на Easyeda](https://oshwlab.com/pavluchenko.r/2channel-dimmer-bread-board)
+
+### Плата принтера
+
+Тоже отличный вариант для реализации которого потребуется старая плата принтера в качестве MCU и твердотельные реле для управления нагрузкой 110-220V 
+
+
+
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
