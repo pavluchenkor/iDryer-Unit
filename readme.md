@@ -438,11 +438,11 @@ iDryer_OFF  ; Отключить нагрев сушилки
     
     **[Табличка 4](CAD/v3/UNIT%20Name%20Plate%204.stl	)**
     
-    **[Опора](/CAD/v3/UNIT%20Foot.stl)**
+    **[Опора](CAD/v3/UNIT%20Foot.stl)**
 
-    **[Заглушка](/CAD/v3/UNIT%20Plug%201.stl)**
+    **[Заглушка](CAD/v3/UNIT%20Plug%201.stl)**
 
-    **[Заглушка](/CAD/v3/UNIT%20Plug%202.stl)**
+    **[Заглушка](CAD/v3/UNIT%20Plug%202.stl)**
 
 
 
