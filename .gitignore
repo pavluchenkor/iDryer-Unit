@@ -3,3 +3,7 @@
 ___iDryerMCU.cfg
 config-20240908-222733.zip
 .moonraker.conf.bkp
+moonraker.cfg
+mainsail.cfg
+test.cfg
+search_vars.cfg

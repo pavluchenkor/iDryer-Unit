@@ -1,93 +1,128 @@
-![iDryer Unit Master](img/Screenshot_3.png)
+![iDryer UNIT%20Master](img/Screenshot_3.png)
 
-### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
 
-# iDryer Unit - Plastic Drying System for 3D Printers Based on Klipper
-![iDryer Unit Master](img/IMG_E2204.jpg)
+# iDryer UNIT%20- Plastic Drying System for 3D Printers Based on Klipper
+### Under development
+![iDryer UNIT%20Master](img/IMG_E2204.jpg)
 
-This project represents a plastic drying control system for 3D printers, running under the Klipper firmware and including up to four dryers with individual operating parameters.
+This project is a modular plastic drying management system for 3D printers, supporting up to four drying units with individual temperature and humidity settings. The system allows setting temperatures up to 90°C and includes a storage mode with minimal humidity to prevent re-absorption of moisture by the filament.
 
-![iDryer Unit Master](img/klipper222252.jpg)
+Additionally, iDryer UNIT%20supports Telegram bot notifications about drying status, completion of processes, and events such as overheating or cycle completion. For visual indication, addressable LEDs can be used: the MCU board includes an output for connecting a strip, which can be configured to display various states (e.g., active drying mode, cycle completion, or errors). The system can leverage Klipper functionality to display temperature, humidity, and remaining drying time, while also automatically logging events and integrating with macros. Complex user profiles and advanced scenarios are supported, such as scheduled start, critical event notifications, and activation of additional lighting functions (e.g., color changes when transitioning between modes).
+
+![iDryer UNIT%20Master](img/klipper222252.jpg)
 
 ## Project Features
 
-  ![iDryer Unit Master](img/IMG_2186.jpg)
+![iDryer UNIT%20Master](img/IMG_2186.jpg)
 
+- **Operating modes: Drying and Storage.**: Drying plastic at up to 90°C and maintaining optimal temperature and humidity for storage.
+- **Modular Structure:**:
 
-- **Drying and Storage Mode**: Ability to dry plastic at temperatures up to 90°C and maintain optimal temperature and humidity for plastic storage.
-- **Dryer Housing**: The housing is printed on a 3D printer.
-- **Integration with Klipper**: All information about the drying process is displayed in the Klipper interface for convenient monitoring and control.
-- **Centralized Architecture**: One dryer is equipped with an MCU and acts as the control unit, while other dryers are connected to it and managed through peripherals. It is also possible to configure iDryer as a separate instance of Klipper for operation with a separate control system or as a second MCU connected to the main printer board on a single Klipper instance.
-- **Connection of Additional Modules**: Additional dryers are connected to the main unit using patch cords through RJ45 connectors for reliable communication.
-- **Support for Up to Four Dryers**: Each dryer can service one or two spools of plastic simultaneously.
-- **Safety**: Klipper safety algorithms and the use of a KSD9700 thermostat at 130°C to prevent accidents make the system safe for home use.
-- **Drying Efficiency**: Optimal plastic drying results are achieved in the shortest possible time by using a humidity sensor and a venting system controlled by a servo-driven damper on schedule.
+  - **iDryer UNIT%20MCU** — the main UNIT%20with a microcontroller (MCU) that controls the entire system.
 
-  ![iDryer Unit Master](img/IMG_2168.jpg)
-  ![iDryer Unit Master](img/IMG_2170.jpg)
+  - **iDryer UNIT%20EXT** — extension modules without a microcontroller, connected to the main unit. Up to three extension modules can be added to increase system capacity.
 
-## Benefits of Use
+- **Klipper Integration:** Displays all drying parameters in the Klipper interface.
 
-- **Improved Print Quality**: Dry plastic ensures stable extrusion and high print quality.
+- **Telegram Bot Connection:** Receive notifications about the current status and process completion.
+
+- **Visual Indication:** Addressable LEDs can be used to display operating modes.
+
+- **Printable Enclosure:** Available in versions for one or two spools. Suitable for spools up to 85 mm wide and 200 mm in diameter. The enclosure can be printed on a 3D printer using ABS or other suitable plastic.
+
+- **System Flexibility:** Supports up to 4 drying units with individual settings. Each dryer can handle one or two spools of plastic simultaneously.
+
+- **Connection of Additional Modules**: Additional dryers are connected to the controller using patch cords via RJ45 connectors for reliable communication.
+
+- **Centralized Architecture**: One dryer is equipped with an MCU and serves as the controller, while other dryers are connected to it and controlled via peripherals. iDryer can also be configured as a separate Klipper instance for independent operation or as a second MCU connected to the printer's mainboard in a single Klipper instance.
+
+- **Safety:** Built-in KSD9700 thermostat at 130°C and Klipper safety algorithms.
+
+- **Drying Efficiency**: Optimal drying results are achieved in minimal time using a humidity sensor and a chamber ventilation system controlled by a servo damper according to a schedule.
+  ![iDryer UNIT%20Master](img/IMG_2168.jpg)
+  ![iDryer UNIT%20Master](img/IMG_2170.jpg)
+
+## Usage Benefits
+
+- **Improved Print Quality**: Dry filament ensures stable extrusion and high-quality printing.
+- **Time Saving**: Ability to dry multiple spools simultaneously.
 - **Efficiency**: Simultaneous drying of multiple spools saves time and increases productivity.
-- **Flexibility**: The system can be expanded or customized to meet specific needs.
-- **Safety**: Hardware and software measures ensure the safe operation of the system.
+- **Flexibility**: The system can be expanded or customized to specific needs.
+- **Visualization**: LEDs provide quick status assessment.
+- **Safety**: Hardware and software features ensure safe system operation.
 
 ## Technical Details
 
-- **MCU**: Used to control the main dryer and coordinate the operation of additional modules. By default, U1 is connected, while other units (U2, U3, U4) can be connected as needed to expand the system. iDryer can be configured as a separate instance of Klipper for use with a separate control system (e.g., on a Raspberry Pi, with two instances of Klipper: one for the printer and one for the dryer) or as a second MCU connected to the main printer board on a single Klipper instance.
-- **Thermostat KSD9700**: A 130°C bimetal thermostat ensures protection in emergency situations by turning off the heater.
-- **Temperature Mode**: Drying is carried out at temperatures up to 90°C, which is suitable for most types of plastic.
-- **Connection Interfaces**: RJ45 connectors are used to connect dryers, simplifying installation and ensuring reliable communication.
+- **iDryer UNIT%20MCU**: Main control UNIT%20with a microcontroller.
+- **iDryer UNIT%20EXT**: Extension module without an MCU.
+- **MCU**: Used to control the main dryer and coordinate additional modules. By default, U1 is connected, while additional devices (U2, U3, U4) can be connected as needed to expand the system. iDryer can be configured as a standalone Klipper instance on a Raspberry Pi, operating independently, or as a second MCU connected to the printer's mainboard in a single Klipper instance.
+- **KSD9700 Thermostat**: A bimetallic thermostat at 130°C ensures safety in emergency situations by disabling the heater.
+- **Temperature Range**: Drying is conducted at temperatures up to 90°C, suitable for most types of plastic.
+- **Connection Interfaces**: RJ45 connectors are used for connections between dryers, simplifying installation and ensuring reliable connections.
+- **LED Strip Output**: Allows connecting addressable LEDs for visual indication.
+
+## Operating Modes
+
+**1. Drying Mode (DRYING)**
+
+- Set drying temperature and time.
+- Automatically switches to storage mode after the cycle ends.
+
+**2. Storage Mode (STORAGE)**
+
+- Maintains temperature and minimal humidity.
+- Activates heater and fan if parameters exceed set thresholds.
 
 ## Installation and Setup
 
-1. **Equipment Assembly**: Assemble the main dryer with the MCU and any additional modules.
-2. **Connection**: Connect the additional modules to the main dryer using patch cords through RJ45 connectors. By default, U1 is connected, and additional modules (U2, U3, U4) can be connected by adding the corresponding configuration files.
+1. **Hardware Assembly**: Assemble the main dryer with an MCU and necessary extension modules.
+2. **Connection**: Connect additional modules to the controller dryer using patch cords through RJ45 connectors. By default, U1 is connected, and additional modules (U2, U3, U4) can be added by including corresponding configuration files.
 3. **Klipper Configuration**: Integrate the drying system into the Klipper configuration.
-4. **Testing**: Verify system operation and ensure data is correctly displayed in the Klipper interface.
+4. **Testing**: Verify system operation and ensure data is displayed correctly in the Klipper interface.
 
 ## Requirements
 
-- 3D printer with Klipper firmware installed.
-- iDryer board with MCU for the main dryer.
+- A 3D printer with Klipper firmware installed.
+- iDryer board with an MCU for the main dryer.
 - KSD9700 thermostat at 130°C for each dryer.
 - RJ45 patch cords and connectors for connecting additional modules to the main dryer.
-- Additional iDryer Unit control boards for each connected dryer.
+- Additional iDryer UNIT%20control boards for each connected dryer.
 
 ---
 
 # iDryer Configuration for Klipper
 
-This repository contains configuration files for the iDryer plastic dryer, based on Klipper firmware and the iDryer Unit control board with the RP2040 microcontroller. The configuration is intended to automate the plastic drying process for 3D printers, including temperature and humidity control.
+This repository contains configuration files for the iDryer plastic dryer based on Klipper firmware and the iDryer UNIT%20control board with an RP2040 microcontroller. The configuration automates the plastic drying process for 3D printers, including temperature and humidity control.
 
 ## Table of Contents
 
 - [Requirements](#requirements)
 - [Preparation](#preparation)
-- [Firmware Installation on iDryer Unit](#firmware-installation-on-idryer-unit)
+- [Installing Firmware on iDryer Unit](#installing-firmware-on-idryer-unit)
 - [Klipper Configuration](#klipper-configuration)
-  - [Connecting iDryer MCU](#connecting-idryer-mcu)
+  - [Connecting the iDryer MCU](#connecting-the-idryer-mcu)
   - [Heater Configuration](#heater-configuration)
   - [Fan Configuration](#fan-configuration)
   - [Temperature and Humidity Sensor Configuration](#temperature-and-humidity-sensor-configuration)
-  - [G-Code Macros](#g-code-macros)
+  - [G-code Macros](#g-code-macros)
 - [Usage](#usage)
+- [3D Printing Models](#3d-printing-models)
 - [Notes](#notes)
 
 ## Requirements
 
 - **Hardware:**
 
-  - iDryer Unit control board with RP2040 microcontroller
-  ![iDryer Unit Master](img/IMG_2683.jpg)
-  ![iDryer Unit Master](img/IMG_2692.jpg)
-  - NTC 100K thermistor for temperature control (or any other sensor supported by Klipper firmware)
-  - Heater element (optimally 220V, 100W)
+  - iDryer UNIT%20control board with an RP2040 microcontroller
+  ![iDryer UNIT%20Master](img/IMG_2683.jpg)
+  ![iDryer UNIT%20Master](img/IMG_2692.jpg)
+  - NTC 100K thermistor for temperature control (or any other sensor supported by Klipper)
+  - Heater element (ideally 220V, 100W)
   - Fan for air circulation in the dryer
-  - Temperature and humidity sensor (e.g., SHT3X, but any other supported by Klipper can be used)
-  - Additional Modules
-   ![iDryer Unit Master](img/IMG_2682-3.jpg)
+  - Temperature and humidity sensor (e.g., SHT3X, or any other supported by Klipper)
+  - Additional control board
+ ![iDryer UNIT%20Master](img/IMG_2682-3.jpg)
 
 - **Software:**
 
@@ -98,42 +133,48 @@ This repository contains configuration files for the iDryer plastic dryer, based
 
 1. **Hardware Assembly:**
 
-   - Connect the heater element and fan to the iDryer Unit board.
-   - Install the thermistor and SHT3X sensor (or any other supported temperature/humidity sensor) in the dryer and connect them to the appropriate pins on the board.
+   - Connect the heating element and the fan to the iDryer UNIT%20control board.
+   - Install the thermistor and the SHT3X sensor (or any other supported temperature/humidity sensor) in the dryer and connect them to the appropriate pins on the board.
 
-2. **File Installation:**
 
-   - Copy the `rp2040_pin_aliases.cfg`, `iDryer.cfg`, and other configuration files to the Klipper configuration directory.
+2. **Installing Necessary Files:**
 
-## Firmware Installation on iDryer Unit
+   - Copy the files `rp2040_pin_aliases.cfg`, `iDryer.cfg`, and other configuration files into the Klipper configuration directory.
 
-### 1. Firmware Preparation:
+## Installing Firmware on iDryer Unit
 
-If the firmware for RP2040 is not yet installed:
+### 1. Preparing the Firmware:
+
+If the firmware for RP2040 has not been installed yet:
 
 - In the Klipper firmware configuration menu:
-  - Enter the configuration menu using the command in the terminal.
+  - Enter the configuration menu using the terminal command.
 
+  
 ```bash
 make menuconfig
 ```
-
+  
   - Select the **RP2040** architecture.
-  ![iDryer Unit Master](img/klipper224807.png)
+![iDryer UNIT%20Master](img/klipper224807.png)
   - Leave the remaining parameters as default.
 
-### 2. Firmware Build:
+### 2. Building the Firmware:
 
-Build the firmware:
+Run the command to build the firmware:
 
 ```bash
 make
 ```
 
-### 3. Firmware Installation on iDryer Unit:
+### 3. Installing the Firmware on iDryer Unit:
 
-- Connect the iDryer Unit board to the computer in programming mode (holding the BOOT button while connecting).
-- Mount the device and load the firmware:
+- Connect the iDryer UNIT%20board to your computer in programming mode (hold the BOOT button while connecting).
+
+    ***This section may vary depending on the architecture and the host operating system.***
+
+- Mount the device and upload the firmware:
+
 
 ```bash
 sudo mount /dev/sda1 /mnt
@@ -143,30 +184,32 @@ sudo umount /mnt
 
 ## Klipper Configuration
 
-### 1. Enabling iDryer Configuration:
+### 1. Enabling the iDryer Configuration:
 
-Add a line to the `printer.cfg` file to include the `iDryer.cfg` configuration file:
+Add the following line to the `printer.cfg` file to include the `iDryer.cfg` configuration file:
+
 
 ```ini
 [include iDryer.cfg]
 ```
 
-### Connecting iDryer MCU
+### Connecting the iDryer MCU
 
-[Find the serial port of your microcontroller and specify it in the configuration file:](https://www.klipper3d.org/Installation.html#building-and-flashing-the-micro-controller)
+[Find the serial port of your microcontroller:](https://www.klipper3d.org/Installation.html#building-and-flashing-the-micro-controller)
 
-![iDryer Unit Master](img/term1.jpg)
+![iDryer UNIT%20Master](img/term1.jpg)
 
 ```bash
 ls /dev/serial/by-id/*
 ```
+and specify it in the configuration file:
 
 ```ini
 [mcu]
 serial: /dev/serial/by-id/usb-Klipper_rp2040_DE63581213745233-if00
 ```
 
-By default, U1 is connected, but you can connect additional modules such as U2, U3, U4 by adding the corresponding configuration files:
+By default, U1 is connected, but you can connect additional modules such as U2, U3, or U4 by adding the corresponding configuration files:
 
 ```ini
 [include U1.cfg]
@@ -175,7 +218,8 @@ By default, U1 is connected, but you can connect additional modules such as U2, 
 [include U4.cfg]
 ```
 
-Thus, the system can be expanded to control multiple dryers. iDryer can be configured as a separate instance of Klipper installed on a Raspberry Pi for independent operation or as a second MCU connected to the main printer board and using a single Klipper instance:
+In this way, the system can be expanded to manage multiple dryers. The iDryer can be configured as a standalone Klipper instance installed on a Raspberry Pi for independent operation, or as a second MCU connected to the printer's mainboard and using a single Klipper instance:
+
 
 ```ini
 [mcu iDryer]
@@ -185,11 +229,14 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_DE63581213745233-if00
 ### Heater Configuration
 
 ```ini
-[heater_generic iDryer_M_Heater]
-heater_pin: H0
+[heater_generic iDryer_U1_Heater]
+heater_pin: H_U1
+# if your iDryer is used as a second MCU use
+# heater_pin: iDryer:H_U1
+# and change everywhere!
 max_power: 1
-sensor_type: NTC 100K MGB18-104F39050L32
-sensor_pin: T0
+sensor_type: NTC 100K MGB18-104F39050L32 #Generic 3950
+sensor_pin: T_U1
 control: pid
 pwm_cycle_time: 0.3
 min_temp: 0
@@ -202,109 +249,117 @@ pid_Kd=48.150
 ### Fan Configuration
 
 ```ini
-[heater_fan Master_Fan]
+[heater_fan Fan_U1]
 fan_speed: 1
-pin: FAN0
-heater: iDryer_M_Heater
+pin: FAN_U1
+heater: iDryer_U1_Heater
 heater_temp: 55
 ```
 
 ### Temperature and Humidity Sensor Configuration
 
-You can use any temperature and humidity sensor supported by Klipper. In the example, an **SHT3X** sensor is used, connected via the I2C interface. The sensors for U1 and U2 are connected to one I2C bus, and the sensors for U3 and U4 are connected to another I2C bus. The sensor addresses on each bus must be different:
+You can use any temperature and humidity sensor supported by Klipper. In this example, the **SHT3X** sensor is used, connected via the I2C interface. Sensors for dryers U1 and U2 are connected to one I2C bus, while sensors for dryers U3 and U4 are connected to another I2C bus. The sensor addresses on each bus must be unique:
 
 ```ini
-[temperature_sensor iDryer_M_Air]
+[temperature_sensor iDryer_U1_Air]
 sensor_type: SHT3X
 i2c_address: 68
-i2c_software_sda_pin: gpio18
-i2c_software_scl_pin: gpio19
+i2c_software_sda_pin: gpio20 #second HW version - green PCB | i2c_software_sda_pin: gpio18 #first HW version - red PCB
+i2c_software_scl_pin: gpio21 #second HW version - green PCB | # i2c_software_scl_pin: gpio19 #first HW version - red PCB
+
 ```
 
-**Note:** If you are using a different temperature or humidity sensor, check the Klipper documentation for the appropriate configuration.
+**Note:** If you are using a different temperature or humidity sensor, refer to the Klipper documentation for the appropriate configuration.
 
-### G-Code Macros
+### G-code Macros
 
-To control the drying process with the ability to set the temperature for different materials, use the following macros:
+To manage the drying process and set temperatures for different materials, use the following macros:
 
 ```ini
-[gcode_macro iDryer_OFF]
+[gcode_macro OFF_U1]
 gcode:
-    SET_HEATER_TEMPERATURE HEATER=iDryer_M_Heater TARGET=0
-    UPDATE_DELAYED_GCODE ID=_UPDATE_UNIT1_DATA DURATION=0
-    UPDATE_DELAYED_GCODE ID=_TOGGLE_SERVO1 DURATION=0
+    UPDATE_DELAYED_GCODE ID=_UPDATE_U1 DURATION=0
+    UPDATE_DELAYED_GCODE ID=_TOGGLE_SERVO_U1 DURATION=0
+    SET_HEATER_TEMPERATURE HEATER=iDryer_U1_Heater TARGET=0
 
-[gcode_macro DRY_UNIT1]
-gcode:
-    {% set unit_temp = params.UNIT_TEMPERATURE|default(40)|int %}
-    SET_GCODE_VARIABLE MACRO=DRY_MODE_U1 VARIABLE=temp VALUE={unit_temp}
 
-[gcode_macro ABS_U1]
-variable_unit_temp: 80
-variable_unit_duration: 240
+[gcode_macro PLA_U1]
+variable_unit_temp: 55
+variable_unit_duration: 180
 gcode:
-    DRY_MODE_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
 
-[gcode_macro PA_U1]
-variable_unit_temp: 90
-variable_unit_duration: 240
-gcode:
-    DRY_MODE_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
 
 [gcode_macro PETG_U1]
 variable_unit_temp: 65
 variable_unit_duration: 240
 gcode:
-    DRY_MODE_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
 
-[gcode_macro PLA_U1]
-variable_unit_temp: 55
+
+[gcode_macro TPU_U1]
+variable_unit_temp: 60
+variable_unit_duration: 300
+gcode:
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+
+
+[gcode_macro ABS_U1]
+variable_unit_temp: 80
 variable_unit_duration: 240
 gcode:
-    DRY_MODE_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+
+
+[gcode_macro PA_U1]
+variable_unit_temp: 90
+variable_unit_duration: 240
+gcode:
+    DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+
 ```
 
-### Data Update Macro:
+### Macro for Data Update:
 
 ```ini
-[delayed_gcode _UPDATE_UNIT1_DATA]
+[delayed_gcode _UPDATE_U1]
 gcode:
-    {% set unit_data = printer['gcode_macro DRY_MODE_U1'] %}
+    {% set unit_data = printer['gcode_macro DRY_U1'] %}
     {% set temperature = unit_data.temp %}
     {% set delta_high =  unit_data.delta_high %}
     
-    { action_respond_info("Unit_1 T: %s H: %.2f%%" %(temperature, printer["sht3x iDryer_M_Air"].humidity)) }
+    # { action_respond_info("Unit_1 T: %s H: %.2f%%" %(temperature, printer["sht3x iDryer_U1_Air"].humidity))}
     
-    {% if printer['temperature_sensor iDryer_M_Air'].temperature|int > temperature|int %}
+    {% if printer['temperature_sensor iDryer_U1_Air'].temperature|int > temperature|int %}
         {% set target_temp = 0|int %}
-    {% elif printer['temperature_sensor iDryer_M_Air'].temperature|int == temperature|int %}
-        {% set target_temp = printer['temperature_sensor iDryer_M_Air'].temperature|int %}
-    {% elif printer['temperature_sensor iDryer_M_Air'].temperature|int < temperature|int %}
-        {% set target_temp = temperature - printer['temperature_sensor iDryer_M_Air'].temperature + temperature + delta_high %}
-        {% if target_temp > temperature + delta_high %}
+    {% elif printer['temperature_sensor iDryer_U1_Air'].temperature|int == temperature|int %}
+        {% set target_temp = printer['temperature_sensor iDryer_U1_Air'].temperature|int %}
+    {% elif printer['temperature_sensor iDryer_U1_Air'].temperature|int < temperature|int %}
+        {% set target_temp = temperature - printer['temperature_sensor iDryer_U1_Air'].temperature + temperature + delta_high%}
+        {% if target_temp > temperature + delta_high %} 
             {% set target_temp = temperature|int + delta_high|int %}
         {% endif %}
     {% endif %}
     
-    SET_HEATER_TEMPERATURE HEATER=iDryer_M_Heater TARGET={target_temp|int}
-    UPDATE_DELAYED_GCODE ID=_UPDATE_UNIT1_DATA DURATION=1
+    SET_HEATER_TEMPERATURE HEATER=iDryer_U1_Heater TARGET={target_temp|int}
+    UPDATE_DELAYED_GCODE ID=_UPDATE_U1 DURATION=1
 ```
 
-### Temperature Setting Macros:
+### Macros for Setting Temperature:
 
-- For ABS plastic:
+- For ABS filament:
 
 ```gcode
 ABS_U1
 ```
 
-- For PLA plastic:
+- For PLA filament:
 
 ```gcode
 PLA_U1
 ```
 
-- For PETG plastic:
+- For PETG filament:
 
 ```gcode
 PETG_U1
@@ -312,65 +367,124 @@ PETG_U1
 
 ## Usage
 
-- Set the drying temperature:
+- Setting the drying temperature:
 
 ```gcode
 DRY_UNIT1 UNIT_TEMPERATURE=60
 ```
 
-- Stop heating:
+- Stopping the heater:
 
 ```gcode
-iDryer_OFF  ; Turn off the dryer heater
+iDryer_OFF  ; Отключить нагрев сушилки
 ```
 
-### CAD models
-!!! success "🛠️ Printing files"
+### Printable Models
+!!! success "🛠️ Printable Files"
 
-    **[Enclosure](CAD/Set%201.3mf)**
-    **[Parts](CAD/Set%101.3mf)**
-    **[Nameplates](CAD/Nameplate%20UNIT.3mf)**
-    
-    Enclosure Print Settings:
+        
+    **[MCU Base](CAD/v3/UNIT%20MCU%20Base%20screw%20mounting.stl)**
 
-    - Material: ABS, ABS-CF, ABS-GF, PP
+    **[EXT Base](CAD/v3/UNIT%20EXT%20Base%20screw%20mounting.stl)**
 
-    - Line Width: 0.6 mm
+    **[Top Cover](CAD/v3/UNIT%20Top%20Cover%20screw%20mounting.stl)**
 
-    - Number of Perimeters: 1
+    **[EXT Electronics Compartment Back Cover](CAD/v3/UNIT%20EXT%20Back%20Cover.stl)**
 
-    - Infill Density: 10%
+    **[MCU Electronics Compartment Back Cover](CAD/v3/UNIT%20MCU%20Back%20Cover.stl)**
 
-    All parts are printed without supports
+    **[Electronics Compartment Left Cover](CAD/v3/UNIT%20Left%20Cover.stl)**
 
-### Configuration files
-!!! success "📁 Configuration files"
+    **[Electronics Compartment Right Cover](CAD/v3/UNIT%20Right%20Cover.stl)**
 
-    **[iDryer](iDryer.cfg)**
-    **[U1](U1.cfg)**
-    **[U2](U2.cfg)**
-    **[U3](U3.cfg)**
-    **[U4](U4.cfg)**
+    **[Latch Handle](CAD/v3/UNIT%20Latch%20Handle.stl)**
+
+    **[Latch](CAD/v3/UNIT%20Latch.stl)**
+
+    **[Filament Outlet](CAD/v3/UNIT%20Filament%20Outlet.stl)**
+
+    **[Floor](CAD/v3/UNIT%20Floor.stl)**
+
+    **[Sensor Retainer](CAD/v3/UNIT%20Floor%20Sensor%20Retainer.stl)**
+
+    **[MCU Light Diffuser](CAD/v3/UNIT%20MCU%20Light%20diffuser.stl)**
+
+    **[MCU Light Separator 1](CAD/v3/UNIT%20MCU%20Light%20separator.stl)**
+
+    **[MCU Light Separator 2](CAD/v3/UNIT%20MCU%20Light%20separator%202.stl)**
+
+    **[MCU Light Separator 3](CAD/v3/UNIT%20MCU%20Light%20separator%203.stl)**
+
+    **[MCU Light Separator 4](CAD/v3/UNIT%20MCU%20Light%20separator%204.stl)**
+
+    **[Damper](CAD/v3/UNIT%20Servo%20damper.stl)**
+
+    **[Lower Housing for Damper](CAD/v3/UNIT%%20damper%20Lower%20Housing.stl)**
+
+    **[Upper Housing for Damper](CAD/v3/UNIT%20Servo%20damper%20Upper%20Housing.stl)**
+
+    **[Logo Plate](CAD/v3/UNIT%20Logo%20Plate.stl)**
+
+    **[Name Plate 1](CAD/v3/UNIT%20Name%20Plate%201.stl)**
+
+    **[Name Plate 2](CAD/v3/UNIT%20Name%20Plate%202.stl)**
+
+    **[Name Plate 3](CAD/v3/UNIT%20Name%20Plate%203.stl)**
+
+    **[Name Plate 4](CAD/v3/UNIT%20Name%20Plate%204.stl)**
+
+    **[Foot](CAD/v3/UNIT%20Foot.stl)**
+
+### Printing Parameters for the Enclosure:
+
+- Material: ABS, ABS-CF, ABS-GF, PP
+- Line width: 0.6–0.8 mm (ensure that clear chambers are formed during printing)
+- Number of perimeters: 1
+- Infill: 10–15%
+- Infill pattern: Linear
+- Closing gap radius: 0.02 mm
+
+All enclosure parts can be printed without supports.
+
+
+### Configuration Files
+!!! success "📁 Configuration Files"
+
+    **[printer](printer.cfg)** | 
+    **[iDryer](iDryer.cfg)** | 
+    **[alias](rp2040_pin_aliases.cfg)** | 
+    **[U1](U1.cfg)** | 
+    **[U2](U2.cfg)** | 
+    **[U3](U3.cfg)** | 
+    **[U4](U4.cfg)** | 
   
 
 ## Feedback
 
 If you have questions or suggestions for improving the system, please create an issue in this repository or contact us directly.
 
-Or visit the Telegram group
-
-### [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer) 
-
-[![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject)
-
-
+Alternatively, join the Telegram group.
 
 ## Notes
 
-- Ensure correct connection of temperature and humidity sensors (e.g., SHT3X or others).
+- Ensure proper connection of temperature and humidity sensors (e.g., SHT3X or others).
 - PID calibration may be required for optimal temperature control.
-- Monitor temperature and humidity readings using macros for more accurate drying conditions adjustment.
+- Monitor temperature and humidity readings using macros for more precise drying condition adjustments.
 - The project is under development.
 
-***Warning: The use of heating elements and temperature control carries a risk of fire and equipment damage. Always follow manufacturer recommendations and observe safety and electrical precautions. Do not leave electrical devices unattended.***
+***Warning: Using heating elements and temperature control involves risks of fire and equipment damage. Always follow manufacturer recommendations and adhere to safety and electrical precautions. Never leave powered devices unattended.***
+
+### DIY Option
+
+You can build the iDryer UNIT%20prototype board yourself with minimal budget. Please note that this is a prototype and should be treated as such.
+
+[Project on Easyeda](https://oshwlab.com/pavluchenko.r/2channel-dimmer-bread-board)
+
+### Printer Board Option
+
+Another great implementation option involves using an old printer board as an MCU and solid-state relays to control a 110-220V load.
+
+
+
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
 
