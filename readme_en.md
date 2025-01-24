@@ -376,7 +376,7 @@ DRY_UNIT1 UNIT_TEMPERATURE=60
 - Stopping the heater:
 
 ```gcode
-iDryer_OFF  ; Отключить нагрев сушилки
+iDryer_OFF  ; Switch off the iDryer heating
 ```
 
 ### Printable Models
