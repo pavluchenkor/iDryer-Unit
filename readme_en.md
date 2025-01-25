@@ -353,16 +353,16 @@ gcode:
 ABS_U1
 ```
 
-- For PLA filament:
+- For PA filament:
 
 ```gcode
-PLA_U1
+PA_U1
 ```
 
-- For PETG filament:
+- For PС filament:
 
 ```gcode
-PETG_U1
+PС_U1
 ```
 
 ## Usage
