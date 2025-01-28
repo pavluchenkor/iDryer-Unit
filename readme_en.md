@@ -1,10 +1,10 @@
-![iDryer UNIT Master](img/Screenshot_3.png)
+![iDryer UNIT Master](img/iDryer.png)
 
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
 
 # iDryer UNIT - Plastic Drying System for 3D Printers Based on Klipper
-### Under development
-![iDryer UNIT Master](img/IMG_E2204.jpg)
+### Release
+![iDryer UNIT Master](img/iDryerWithSpool.png)
 
 This project is a modular plastic drying management system for 3D printers, supporting up to four drying units with individual temperature and humidity settings. The system allows setting temperatures up to 90°C and includes a storage mode with minimal humidity to prevent re-absorption of moisture by the filament.
 
@@ -115,14 +115,14 @@ This repository contains configuration files for the iDryer plastic dryer based 
 - **Hardware:**
 
   - iDryer UNIT control board with an RP2040 microcontroller
-  ![iDryer UNIT Master](img/IMG_2683.jpg)
+  ![iDryer UNIT Master](img/MCU_PCB.png)
   ![iDryer UNIT Master](img/IMG_2692.jpg)
   - NTC 100K thermistor for temperature control (or any other sensor supported by Klipper)
   - Heater element (ideally 220V, 100W)
   - Fan for air circulation in the dryer
   - Temperature and humidity sensor (e.g., SHT3X, or any other supported by Klipper)
   - Additional control board
- ![iDryer UNIT Master](img/IMG_2682-3.jpg)
+ ![iDryer UNIT Master](img/EXT_PCB.png)
 
 - **Software:**
 

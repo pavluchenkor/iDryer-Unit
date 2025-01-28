@@ -1,10 +1,10 @@
-![iDryer Unit Master](img/Screenshot_3.png)
+![iDryer Unit Master](img/iDryer.png)
 
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
 
 # iDryer Unit - система сушки пластика для 3D-принтеров на базе Klipper
-### В разработке
-![iDryer Unit Master](img/IMG_E2204.jpg)
+### Релиз проекта
+![iDryer Unit Master](img/iDryerWithSpool.png)
 
 Этот проект представляет собой модульную систему управления сушкой пластика для 3D-принтеров, которая поддерживает до четырех сушильных блоков с индивидуальными настройками температуры и влажности. Система позволяет задавать температуру до 90°C и поддерживает режим хранения при минимальной влажности для предотвращения повторного набора влаги филаментом.
 
@@ -116,14 +116,14 @@
 - **Аппаратное обеспечение:**
 
   - Плата управления iDryer Unit с микроконтроллером RP2040
-  ![iDryer Unit Master](img/IMG_2683.jpg)
+  ![iDryer Unit Master](img/MCU_PCB.png)
   ![iDryer Unit Master](img/IMG_2692.jpg)
   - Терморезистор NTC 100K для контроля температуры (или любой другой датчик, поддерживаемый прошивкой Klipper)
   - Нагревательный элемент (оптимально 220В, 100Вт)
   - Вентилятор для циркуляции воздуха в сушилке
   - Датчик температуры и влажности (например, SHT3X, но может быть любой другой, поддерживаемый Klipper) &#x20;
   - Дополнительная плата
- ![iDryer Unit Master](img/IMG_2682-3.jpg)
+ ![iDryer Unit Master](img/EXT_PCB.png)
 
 
 - **Программное обеспечение:**
