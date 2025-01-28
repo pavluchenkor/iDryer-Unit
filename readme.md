@@ -350,16 +350,16 @@ gcode:
 ABS_U1
 ```
 
-- Для PLA-пластика:
+- Для нейлона:
 
 ```gcode
-PLA_U1
+PA_U1
 ```
 
-- Для PETG-пластика:
+- Для поликарбоната:
 
 ```gcode
-PETG_U1
+PC_U1
 ```
 
 ## Использование
@@ -432,7 +432,7 @@ iDryer_OFF  ; Отключить нагрев сушилки
     
     **[Табличка 1](CAD/v3/UNIT%20Name%20Plate%201.stl	)**
     
-    **[Табличка 2](CAD/v3/UNIT%20Plate%202.stl	)**
+    **[Табличка 2](CAD/v3/UNIT%20Name%20Plate%202.stl	)**
     
     **[Табличка 3](CAD/v3/UNIT%20Name%20Plate%203.stl	)**
     
