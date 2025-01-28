@@ -1,4 +1,4 @@
-![iDryer UNIT%20Master](img/Screenshot_3.png)
+![iDryer UNIT Master](img/Screenshot_3.png)
 
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
 
