@@ -19,7 +19,6 @@ Wait for GitHub to create a fork (this is your personal copy of the repository).
 After forking the repository, clone your own fork, not the original repository:
 
 Option 1: Using Git (Recommended)
-bash
 ```
 git clone https://github.com/YOUR-USERNAME/iDryer-Unit.git
 cd iDryer-Unit
