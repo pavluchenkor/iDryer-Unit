@@ -2,6 +2,8 @@
 
 This guide is for users who want to add their own mods to this repository. Please follow the instructions below step by step to ensure your mod is correctly structured and easy to understand for others.
 
+**Important: Original files are provided under the CC BY-NC-SA license. Any modifications or derivatives must be shared in this repository in accordance with the license terms and the repository submission guidelines. Commercial use is strictly prohibited.**
+
 ---
 
 ## 1. Clone the Repository
