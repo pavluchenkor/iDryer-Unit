@@ -5,10 +5,26 @@ This guide is for users who want to add their own mods to this repository. Pleas
 **Important: Original files are provided under the CC BY-NC-SA license. Any modifications or derivatives must be shared in this repository in accordance with the license terms and the repository submission guidelines. Commercial use is strictly prohibited.**
 
 ---
+## 1. Fork the Repository (Required)
+Before making changes, you must fork this repository to your own GitHub account:
 
-## 1. Clone the Repository
+Open the repository in GitHub:
+https://github.com/pavluchenkor/iDryer-Unit
+Click the "Fork" button in the top-right corner.
+Choose your GitHub account as the destination.
+Wait for GitHub to create a fork (this is your personal copy of the repository).
 
-To get started, download or clone the repository without modifying any existing files:
+
+## 2. Clone Your Fork
+After forking the repository, clone your own fork, not the original repository:
+
+Option 1: Using Git (Recommended)
+bash
+```
+git clone https://github.com/YOUR-USERNAME/iDryer-Unit.git
+cd iDryer-Unit
+```
+(Replace YOUR-USERNAME with your GitHub username.)
 
 ### Option 1: Using Git (Recommended)
 
@@ -24,7 +40,7 @@ To get started, download or clone the repository without modifying any existing 
 3. Extract the ZIP file to your computer.
 
 
-## 2. Add Your Mod to the Correct Folder
+## 3. Add Your Mod to the Correct Folder
 
 Based on the type of mod you're creating, it should go into one of the following main directories:
 
@@ -65,7 +81,7 @@ If your mod is called "CoolMod" and involves CAD models or mechanical components
 ├── readme.md
 
 ```
-## 3. Organize Your Mod Files
+## 4. Organize Your Mod Files
 
 In your mod folder, create a clear and logical structure for your files. At a minimum, your mod folder should include the following:
 
@@ -82,7 +98,7 @@ In your mod folder, create a clear and logical structure for your files. At a mi
 - assembly/: A folder for assembly instructions or exploded views.
 - diagrams/: A folder for electrical or mechanical diagrams.
 
-## 4. Write a README.md for Your Mod
+## 5. Write a README.md for Your Mod
 
 Every mod must include a README.md file inside its folder. This file should provide clear and detailed information about your mod. Use the following template to guide you:
 
@@ -150,7 +166,7 @@ gcode:
 
 Add your name or GitHub handle here (optional).
 
-## 5. Submit Your Mod
+## 6. Submit Your Mod
 
 ### Option 1: Using Git
 
