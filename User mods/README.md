@@ -15,9 +15,7 @@ To get started, download or clone the repository without modifying any existing 
 1. Open your terminal or command prompt.
 2. Clone the repository by running the following command:
    ```bash
-   git clone <repository-link>
-
-Replace <repository-link> with the actual link to the repository.
+   git clone https://github.com/pavluchenkor/iDryer-Unit.git
 
 ### Option 2: Download as a ZIP File
 
