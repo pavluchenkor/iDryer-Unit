@@ -83,7 +83,7 @@ Additionally, iDryer UNIT supports Telegram bot notifications about drying statu
 
 ## Requirements
 
-- A 3D printer with Klipper firmware installed.
+- 3D printer with the current Klipper firmware installed.
 - iDryer board with an MCU for the main dryer.
 - KSD9700 thermostat at 130°C for each dryer.
 - RJ45 patch cords and connectors for connecting additional modules to the main dryer.
