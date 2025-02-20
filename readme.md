@@ -444,6 +444,18 @@ iDryer_OFF  ; Отключить нагрев сушилки
 
     **[Заглушка](CAD/v3/UNIT%20Plug%202.stl)**
 
+    **Duo**
+
+    **[Заглушка](CAD/v3/UNIT%20MCU%20duo%20Back%20Cover.stl)**
+
+    **[Заглушка](CAD/v3/UNIT%20MCU%20duo%20Base%20screw%20mounting.stl)**
+
+    **[Заглушка](CAD/v3/UNIT%20duo%20silica%20tray.stl)**
+
+    **[Заглушка](CAD/v3/UNIT%20duo%20Top%20Cover%20screw%20mounting.stl)**
+
+
+
 
 
 
