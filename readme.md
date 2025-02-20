@@ -446,13 +446,13 @@ iDryer_OFF  ; Отключить нагрев сушилки
 
     **Duo**
 
-    **[Заглушка](CAD/v3/UNIT%20MCU%20duo%20Back%20Cover.stl)**
+    **[Задняя крышка отсека электроники Duo](CAD/v3/UNIT%20MCU%20duo%20Back%20Cover.stl)**
 
-    **[Заглушка](CAD/v3/UNIT%20MCU%20duo%20Base%20screw%20mounting.stl)**
+    **[База MCU Duo](CAD/v3/UNIT%20MCU%20duo%20Base%20screw%20mounting.stl)**
 
-    **[Заглушка](CAD/v3/UNIT%20duo%20silica%20tray.stl)**
+    **[Лоток для силикона Duo](CAD/v3/UNIT%20duo%20silica%20tray.stl)**
 
-    **[Заглушка](CAD/v3/UNIT%20duo%20Top%20Cover%20screw%20mounting.stl)**
+    **[Верхняя крышка Duo](CAD/v3/UNIT%20duo%20Top%20Cover%20screw%20mounting.stl)**
 
 
 
