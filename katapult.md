@@ -109,3 +109,5 @@ pip3 install pyserial
 cd ~/katapult/scripts
 python3 flashtool.py -d <serial ID>
 ```
+
+Special thanks to @victrvic for the original manual
