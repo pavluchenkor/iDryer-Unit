@@ -1,6 +1,6 @@
 Flip Filament Out Mod
 
-(Img/photo_1.jpg)
+![photo](Img/photo_1.jpg)
 
 Описание
 
@@ -8,7 +8,7 @@ Flip Filament Out Mod — это модификация для сушилки iD
 
 Данная модификация полезна в случаях, когда большие катушки с пластиком зацепляются за крышку и застряют. В таких ситуациях можно быстро развернуть выход филамента вверх, чтобы устранить проблему.
 
-(Img/cut-view.png)
+![cut-view](Img/cut-view.png)
 
 Список материалов
 
@@ -24,17 +24,17 @@ Flip Filament Out Mod — это модификация для сушилки iD
 
 Перед слоем 16 добавить паузу, чтобы вставить магниты (соблюдайте полярность).
 
-(Img/arrangement-of-parts-on-bed.png)
+![arrangement-of-parts-on-bed](Img/arrangement-of-parts-on-bed.png)
 
-(Img/layer-height.png)
+![Img/layer-height](Img/layer-height.png)
 
-(Img/Pause-on-layer.png)
+![Img/Pause-on-layer](Img/Pause-on-layer.png)
 
 
 
 Flip Filament Out Mod
 
-(Img/photo_1.jpg)
+![photo](Img/photo_1.jpg)
 
 Description
 
@@ -42,7 +42,7 @@ Flip Filament Out Mod is a modification for the iDryer Unit that allows you to q
 
 This modification is particularly useful in cases where large filament spools get stuck against the lid. By simply rotating the filament output upward, this problem is eliminated.
 
-(Img/cut-view.png)
+![cut-view](Img/cut-view.png)
 
 Materials List
 
@@ -58,8 +58,8 @@ Arrange parts as shown in the screenshot.
 
 Add a pause before layer 16 to insert magnets (ensure correct polarity).
 
-(Img/arrangement-of-parts-on-bed.png)
+![arrangement-of-parts-on-bed](Img/arrangement-of-parts-on-bed.png)
 
-(Img/layer-height.png)
+![Img/layer-height](Img/layer-height.png)
 
-(Img/Pause-on-layer.png)
+![Img/Pause-on-layer](Img/Pause-on-layer.png)
