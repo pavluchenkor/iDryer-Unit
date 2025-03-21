@@ -167,6 +167,19 @@ Solution:
 ### **Conclusion**
 Setting up the iDryer Unit requires careful adjustment of PID parameters, `variable_delta_high`, and servo operation. When properly configured, the system will operate **stably and efficiently**, ensuring high-quality filament drying.
 
+### Alternative variant of the process control algorithm
+
+High End variant from @Xatang
+
+Automatically maintains optimal drying and storage conditions, with adjustable parameters and coefficients, plus informative graphs.
+
+![xatang](img/xatang.jpg)
+
+[See it on GitHub](https://github.com/xatang/PyUnit)
+
+
+
+
 ### **General Safety Measures:**
 - **Disconnect the device from the power supply before performing any work.**
 - **Do not touch exposed live parts.**
