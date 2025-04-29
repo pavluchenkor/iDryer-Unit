@@ -1,20 +1,20 @@
-![iDryer UNIT Master](img/iDryer.png)
+![iDryer UNIT Master](imgweb/iDryer.png)
 
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit)
 
 # iDryer UNIT - Plastic Drying System for 3D Printers Based on Klipper
 ### Release
-![iDryer UNIT Master](img/iDryerWithSpool.png)
+![iDryer UNIT Master](imgweb/iDryerWithSpool.png)
 
 This project is a modular plastic drying management system for 3D printers, supporting up to four drying units with individual temperature and humidity settings. The system allows setting temperatures up to 90°C and includes a storage mode with minimal humidity to prevent re-absorption of moisture by the filament.
 
 Additionally, iDryer UNIT supports Telegram bot notifications about drying status, completion of processes, and events such as overheating or cycle completion. For visual indication, addressable LEDs can be used: the MCU board includes an output for connecting a strip, which can be configured to display various states (e.g., active drying mode, cycle completion, or errors). The system can leverage Klipper functionality to display temperature, humidity, and remaining drying time, while also automatically logging events and integrating with macros. Complex user profiles and advanced scenarios are supported, such as scheduled start, critical event notifications, and activation of additional lighting functions (e.g., color changes when transitioning between modes).
 
-![iDryer UNIT Master](img/klipper222252.jpg)
+![iDryer UNIT Master](imgweb/klipper222252.jpg)
 
 ## Project Features
 
-![iDryer UNIT Master](img/IMG_2186.jpg)
+![iDryer UNIT Master](imgweb/IMG_2186.jpg)
 
 - **Operating modes: Drying and Storage.**: Drying plastic at up to 90°C and maintaining optimal temperature and humidity for storage.
 - **Modular Structure:**:
@@ -40,8 +40,8 @@ Additionally, iDryer UNIT supports Telegram bot notifications about drying statu
 - **Safety:** Built-in KSD9700 thermostat at 130°C and Klipper safety algorithms.
 
 - **Drying Efficiency**: Optimal drying results are achieved in minimal time using a humidity sensor and a chamber ventilation system controlled by a servo damper according to a schedule.
-  ![iDryer UNIT Master](img/IMG_2168.jpg)
-  ![iDryer UNIT Master](img/IMG_2170.jpg)
+  ![iDryer UNIT Master](imgweb/IMG_2168.jpg)
+  ![iDryer UNIT Master](imgweb/IMG_2170.jpg)
 
 ## Usage Benefits
 
@@ -115,14 +115,14 @@ This repository contains configuration files for the iDryer plastic dryer based 
 - **Hardware:**
 
   - iDryer UNIT control board with an RP2040 microcontroller
-  ![iDryer UNIT Master](img/MCU_PCB.png)
-  ![iDryer UNIT Master](img/IMG_2692.jpg)
+  ![iDryer UNIT Master](imgweb/MCU_PCB.png)
+  ![iDryer UNIT Master](imgweb/IMG_2692.jpg)
   - NTC 100K thermistor for temperature control (or any other sensor supported by Klipper)
   - Heater element (ideally 220V, 100W)
   - Fan for air circulation in the dryer
   - Temperature and humidity sensor (e.g., SHT3X, or any other supported by Klipper)
   - Additional control board
- ![iDryer UNIT Master](img/EXT_PCB.png)
+ ![iDryer UNIT Master](imgweb/EXT_PCB.png)
 
 - **Software:**
 
@@ -156,7 +156,7 @@ make menuconfig
 ```
   
   - Select the **RP2040** architecture.
-![iDryer UNIT Master](img/klipper224807.png)
+![iDryer UNIT Master](imgweb/klipper224807.png)
   - Leave the remaining parameters as default.
 
 ### 2. Building the Firmware:
@@ -197,7 +197,7 @@ Add the following line to the `printer.cfg` file to include the `iDryer.cfg` con
 
 [Find the serial port of your microcontroller:](https://www.klipper3d.org/Installation.html#building-and-flashing-the-micro-controller)
 
-![iDryer UNIT Master](img/term1.jpg)
+![iDryer UNIT Master](imgweb/term1.jpg)
 
 ```bash
 ls /dev/serial/by-id/*

@@ -173,7 +173,7 @@ High End variant from @Xatang
 
 Automatically maintains optimal drying and storage conditions, with adjustable parameters and coefficients, plus informative graphs.
 
-![xatang](img/xatang.jpg)
+![xatang](imgweb/xatang.jpg)
 
 [See it on GitHub](https://github.com/xatang/PyUnit)
 
