@@ -1,52 +1,164 @@
-# iDryer Unit User Manual
+## **iDryer Unit User Setup Guide**
 
-## ⚠️ Warning: High-Voltage Equipment ⚠️
+### ⚠ Warning! High-voltage Electrical Equipment ⚠
 
-Before starting, please review all safety precautions!
+Carefully review all safety precautions before starting any work!
 
-iDryer Unit includes components that operate on high voltage (220V) and open heating elements. Incorrect wiring or usage may result in electric shock, fire, or damage to the device.
+iDryer Unit contains components operating at high voltage (220V) and exposed heating elements. Incorrect wiring or operation may result in electric shock, fire, or device failure.
 
-## Preparation Before Assembly
+### **Preparation for Assembly**
 
-Before assembling, perform the following steps:
+Before assembling the unit, complete the following steps:
 
-* Make sure all components are present.
-* Check the fit of all parts, especially moving components.
-* Ensure all mechanical parts move smoothly.
+* Ensure all parts are present.
+* Check the fit of all parts, especially those involving moving components.
+* Confirm smooth and even movement of all mechanical parts.
 
-## Pre-Assembly System Test
+### **Preliminary System Check**
 
-We recommend assembling and testing the system **on the table**, outside the enclosure:
+It is recommended to first assemble the entire system **on a table**, without mounting it into the case, and perform a test:
 
 * Connect all components.
-* Verify the heater, fan, damper servo, and temperature sensors are functioning.
-* Connect the system to **Klipper** and confirm macro operation.
+* Test the operation of the heater, fan, damper servo, and temperature sensors.
+* Connect the system to **Klipper** and verify the correct execution of macros.
 
-Once testing is successful, install components into the enclosure. Shorten sensor and power wires to the minimum required length.
+After successful testing, proceed to install the components into the case.
+During final assembly, shorten the sensor and power wires to the minimum required length.
 
 ---
 
-## Installing Required Files
+## Using `mcu` and `second_mcu`
 
-Copy the following configuration files to your Klipper config directory:
+In the Klipper configuration, the `[mcu]` section defines the primary microcontroller responsible for managing the 3D printer. This usually includes stepper motors, heaters, and sensors. For devices like iDryer Unit connected directly to the control host without a printer mainboard, the primary microcontroller is specified in the `[mcu]` section.
 
-* `rp2040_pin_aliases.cfg`
-* `iDryer.cfg`
-* Other relevant config files
+The `[second_mcu]` section is used when an additional microcontroller is needed. This applies to setups involving external devices or expansion modules such as sensors, fans, or control boards interacting with Klipper via USB, CAN, or UART. In a configuration with iDryer Unit connected to the main 3D printer host, such a microcontroller is specified as `second_mcu`.
+
+### Configuration Example
+
+```
+[mcu]
+serial: /dev/ttyUSB0
+
+[second_mcu my_board]
+serial: /dev/ttyUSB1
+```
+
+---
+
+## Installing Configuration Files
+
+1. Connect to the host:
+
+```bash
+ssh user_name@printer_address
+```
+
+2. Navigate to the configuration directory:
+
+```bash
+cd ~/Printer_name/config/
+```
+
+!!! note "Important"
+
+```
+Ensure the file printer.cfg is present in this directory. This is the main Klipper configuration file.
+```
+
+\=== "mcu"
+
+````
+1 Download the setup script:
+
+```bash
+wget https://raw.githubusercontent.com/pavluchenkor/iDryer-Unit/main/sh/download_iDryer_mcu.sh
+```
+
+2 Grant execution permissions:
+
+```bash
+chmod +x download_iDryer_mcu.sh
+```
+
+3 Run the script:
+
+```bash
+./download_iDryer_mcu.sh
+```
+````
+
+\=== "second mcu"
+
+````
+1 Download the setup script:
+
+```bash
+wget https://raw.githubusercontent.com/pavluchenkor/iDryer-Unit/main/sh/download_iDryer_second_mcu.sh
+```
+
+2 Grant execution permissions:
+
+```bash
+chmod +x download_iDryer_second_mcu.sh
+```
+
+3 Run the script:
+
+```bash
+./download_iDryer_second_mcu.sh
+```
+````
+
+A directory containing all necessary configuration files will be created.
+
+#### In the printer.cfg file
+
+To integrate iDryer configuration files into the main Klipper printer configuration, add the appropriate `include` line at the top of the `printer.cfg` file. Refer to `example_printer.cfg` for guidance.
+
+Your edited printer.cfg should resemble the following:
+
+\=== "mcu"
+`     ...     [include iDryer_mcu/iDryer.cfg]
+    ...
+    `
+\=== "second mcu"
+
+````
+```
+...
+[include iDryer_second_mcu/iDryer.cfg]
+...
+```
+````
 
 ### Configuration Files
 
-!!! success "📁 Configuration Files"
+If the method above is not feasible, manually download the appropriate configuration files for your setup and transfer them using the Fluid or Mainsail interface.
 
-   [printer](printer.cfg) |
-   [iDryer](iDryer.cfg) |
-   [alias](rp2040_pin_aliases.cfg) |
-   [U1](U1.cfg) |
-   [U2](U2.cfg) |
-   [U3](U3.cfg) |
-   [U4](U4.cfg) |
+[Download project archive from Github](https://github.com/pavluchenkor/iDryer-Unit/archive/refs/heads/main.zip)
 
-By default, U1 is connected. You can connect more modules (U2, U3, U4) by including additional config files:
+#### In the iDryer.cfg file
+
+In the terminal
+
+```
+ls /dev/serial/by-id/*
+```
+
+output
+
+```
+/dev/serial/by-id/usb-Klipper_rp2040_XXXXXXXXXXXXXXXX-XXXX
+```
+
+In the iDryer.cfg file, replace the mcu serial with the obtained ID
+
+```ini
+[mcu iDryer]
+serial: /dev/serial/by-id/usb-Klipper_rp2040_XXXXXXXXXXXXXXXX-XXXX
+```
+
+By default, iDryer.cfg connects the first unit - U1, but you can connect additional units such as U2, U3, U4 by uncommenting the respective configuration files:
 
 ```ini
 [include U1.cfg]
@@ -55,76 +167,22 @@ By default, U1 is connected. You can connect more modules (U2, U3, U4) by includ
 [include U4.cfg]
 ```
 
-This expands the system to control multiple dryer units. iDryer can be used either as a separate Klipper instance (e.g., on a dedicated Raspberry Pi) or as a second MCU connected to the main printer board in a single Klipper instance:
+Thus, the system can be expanded to control multiple dryers. iDryer can be configured either as a standalone Klipper instance running on a Raspberry Pi for independent operation or as a second MCU connected to the printer's mainboard using the same Klipper instance.
 
-```ini
-[mcu iDryer]
-serial: /dev/serial/by-id/usb-Klipper_rp2040_DE63581213745233-if00
-```
+## **iDryer Unit User Setup Guide**
 
-## Using a Second MCU in Klipper
+### Equipment Configuration
 
-If your device is connected as a second MCU (e.g., an extra iDryer Unit board), keep in mind:
-
-* The second MCU has its own name in the config (e.g., `iDryer`).
-* Pin names must be prefixed with the MCU name and a colon.
-
-### Example
-
-If used as primary MCU:
+### Heater Configuration
 
 ```ini
 [heater_generic iDryer_U1_Heater]
 heater_pin: H_U1
-sensor_pin: T_U1
-```
-
-If used as second MCU:
-
-```ini
-[heater_generic iDryer_U1_Heater]
-heater_pin: iDryer:H_U1
-sensor_pin: iDryer:T_U1
-```
-
-**Important:** Add the `iDryer:` prefix to all pins from the second MCU.
-
-### Where to Add MCU Prefix
-
-Ensure the prefix is used in all sections that reference second MCU pins:
-
-* `[heater_generic]`
-* `[temperature_sensor]`
-* `[output_pin]`
-* `[fan]`
-* `[gpio]`
-
-### How to Find the MCU Name
-
-The name is defined in the `[mcu]` section:
-
-```ini
-[mcu iDryer]
-serial: /dev/serial/by-id/usb-Klipper_iDryer_Unit123456-if00
-```
-
-Use this name as prefix for all relevant pins.
-
-### Shortcut Rule
-
-If a pin belongs to a second MCU, use `MCUName:PinName` format.
-
-## Hardware Setup
-
-### Heater Setup
-
-```ini
-[heater_generic iDryer_U1_Heater]
-heater_pin: H_U1
-# If iDryer is a second MCU use:
+# if your iDryer is used as a second MCU use
 # heater_pin: iDryer:H_U1
+# and change everywhere!
 max_power: 1
-sensor_type: NTC 100K MGB18-104F39050L32
+sensor_type: NTC 100K MGB18-104F39050L32 #Generic 3950
 sensor_pin: T_U1
 control: pid
 pwm_cycle_time: 0.3
@@ -135,7 +193,7 @@ pid_Ki=5.628
 pid_Kd=48.150
 ```
 
-### Fan Setup
+### Fan Configuration
 
 ```ini
 [heater_fan Fan_U1]
@@ -146,91 +204,111 @@ heater: iDryer_U1_Heater
 heater_temp: 55
 ```
 
-### Temperature and Humidity Sensor Setup
+### Temperature and Humidity Sensor Configuration
 
-You can use any Klipper-supported temp/humidity sensor. The example uses **SHT3X** over I2C. U1/U2 share one I2C bus, U3/U4 share another. Sensor addresses must differ on each bus:
+You may use any temperature and humidity sensor supported by Klipper. This example uses the **SHT3X** sensor connected via the I2C interface. Sensors for dryers U1 and U2 are connected to one I2C bus, while sensors for dryers U3 and U4 are connected to a different bus. Sensor addresses on each bus must be distinct:
 
 ```ini
 [temperature_sensor iDryer_U1_Air]
 i2c_mcu: iDryer
 sensor_type: SHT3X
 i2c_bus: i2c0f
-i2c_address: 68
+i2c_address: 68 # 68 or 69
 ```
 
-**Note:** Check Klipper docs if using a different sensor.
+**Note:** If using a different temperature or humidity sensor, refer to the Klipper documentation for appropriate configuration.
 
-## Final System Setup
+## **Final System Setup**
 
-### PID Calibration
+### **PID Controller Calibration**
 
-Before use, calibrate the **PID heater regulator**:
+Before using the system, calibrate the heater's **PID controller**.
 
-* **Suggested drying temp**: **90°C**
-* Default PID values are in `iDryer.cfg`, but **autotune** is advised for your system.
+* **Recommended drying temperature**: **90°C**.
+* The `iDryer.cfg` configuration already contains preliminary PID settings, but **autotuning** is recommended for your specific setup.
 
-**To calibrate:**
+**Calibration Steps:**
 
-1. Close dryer lid.
-2. In Klipper console, run:
+With the dryer lid closed:
+
+1. Open the Klipper console.
+2. Run the command:
 
    ```
    PID_CALIBRATE HEATER=iDryer_U1_Heater TARGET=100
    ```
-3. Wait for it to finish.
-4. Copy the new **Kp, Ki, Kd** into `iDryer.cfg`:
+3. Wait for calibration to complete.
+4. Record the resulting **Kp, Ki, Kd** values into the iDryer.cfg configuration.
+
+Example heater section in `iDryer.cfg`:
 
 ```ini
 [heater_generic iDryer_U1_Heater]
-...
+heater_pin: H_U1
+max_power: 1
+sensor_type: NTC 100K MGB18-104F39050L32
+sensor_pin: T_U1
+control: pid
+pwm_cycle_time: 0.3
+min_temp: 0
+max_temp: 125
 pid_Kp=29.625
 pid_Ki=0.945
 pid_Kd=232.186
 ```
 
-### Setting `variable_delta_high`
+---
 
-Controls temp difference between heater and chamber:
+### **Configuring "variable\_delta\_high" Parameter**
 
-* **Initial value:** 15°C
-* Steps:
+The `variable_delta_high` variable manages the temperature differential between the heater and the chamber.
 
-  1. Set `variable_delta_high=15`
-  2. Run `PA_U1` macro
-  3. Wait for heater to stabilize
-  4. Measure chamber temp:
+* **Initial value for variable\_delta\_high:** 15°C
+* To tune it correctly:
 
-     * If \~90°C → keep value
-     * If lower → increase delta
+  1. Set `variable_delta_high=15`.
+  2. Start heating using the `PA_U1` macro.
+  3. Wait until the heater temperature stabilizes.
+  4. Check the chamber temperature:
 
-**Test** for 30 minutes and check every 30-60 mins.
+     * **If 90°C is reached** - keep the current `variable_delta_high` value.
+     * **If lower** - increase `variable_delta_high`.
+  5. Let the dryer run for **30 minutes**, then check the heater state every **30-60 minutes**.
 
-**If heater touches plastic**, reduce `variable_delta_high`, reprint parts, or modify mount.
+**Important!**
+If the heater **sticks to the plastic**, the plastic cannot withstand the temperature - reduce `variable_delta_high`, reprint the case with a different filament, or change the heater mount design.
 
-**Turn off heating:** `OFF_U1`
+**To disable heating** - use the macro OFF\_U1
 
-### Damper Servo Setup
+---
 
-Controls air ventilation in chamber.
+### **Damper Servo Setup**
 
-#### Servo Basics
+The servo controls the dryer chamber ventilation.
 
-* Uses **PWM** signal
-* Different servos = different responses
-* Must tune individually
+#### **Basic Servo Operation Principles**
 
-#### Setting Servo Range
+* Servo is controlled via **PWM signal**.
+* Different servos may respond differently to the same PWM values.
+* Servo tuning must be **individual**.
 
-1. **Don’t mount damper yet**
-2. Test min/max angles:
+#### **Setting Damper End Positions**
+
+1. **Do not fix the damper to the case during initial setup**.
+2. Determine **maximum and minimum** servo rotation angles:
 
    ```
    SET_SERVO SERVO=srv_U1 ANGLE=0
+   ```
+
+   ```
    SET_SERVO SERVO=srv_U1 ANGLE=90
    ```
-3. Adjust if it hits enclosure
+3. If the servo hits the case - adjust the range.
 
-#### In Config:
+#### **Configuration Settings**
+
+In the `iDryer.cfg` file:
 
 ```ini
 [servo srv_U1]
@@ -240,38 +318,46 @@ minimum_pulse_width: 0.00055
 maximum_pulse_width: 0.002
 ```
 
-Set angle variables:
+Adjust values for variable\_servo\_open\_angle and variable\_servo\_closed\_angle:
 
-```ini
+```
 [gcode_macro DRY_U1]
-variable_servo_open_angle: 40
-variable_servo_closed_angle: 94
-variable_servo_open_time: 10
-variable_servo_closed_time: 300
+variable_temp: 5
+variable_humidity: 5
+variable_duration: 5
+variable_delta_high: 30
+variable_servo_angle: 0
+variable_servo_open_angle: 40 #degrees
+variable_servo_closed_angle: 94 #degrees
+variable_servo_open_time: 10 #second
+variable_servo_closed_time: 300 #second
+variable_data: {}
 ```
 
-### Power Correction for Servo
+---
 
-If multiple servos cause issues:
+#### **Servo Power Correction**
 
-1. **Resistor to limit current**
+If multiple servos are used and issues occur, consider using an **active USB hub**.
 
-   * Add 4-10 Ohm resistor in servo VCC line
-   * Present on rev3 boards, value may vary
+Solution:
 
-2. **Active USB Hub**
+1. **Current limiting via resistor**
 
-   * Use powered hub to offload host
+   * Install a **4-10 Ohm resistor** in the servo power line.
+   * 3rd revision boards already include such resistors, but the needed resistance may vary.
+   * This helps reduce peak load on the host's USB port.
+2. **Using an active hub**
 
-## Additional Tips
+   * Connecting via a powered USB hub helps avoid overloading the host system.
 
-* Monitor temp/humidity via Klipper.
-* Check hardware regularly.
-* Adjust heater/damper mounts as needed.
+---
 
-## System Macros
+## System Operation Overview
 
 ### G-code Macros
+
+To control the drying process with preset temperatures for various materials, use the following macros:
 
 ```ini
 [gcode_macro OFF_U1]
@@ -314,79 +400,115 @@ variable_unit_temp: 90
 variable_unit_duration: 240
 gcode:
     DRY_U1 UNIT_TEMPERATURE={unit_temp} HUMIDITY=10 TIME={unit_duration}
+
 ```
 
+### Temperature Setting Macros:
 
-### Run Example
+* For ABS plastic:
 
 ```gcode
-   ABS_U1     ; For ABS
-   PA_U1      ; For Nylon
-   PC_U1      ; For PC
+    ABS_U1
 ```
 
-### Use Example
+* For Nylon:
 
 ```gcode
-   DRY_UNIT1 UNIT_TEMPERATURE=60
+    PA_U1
 ```
+
+* For Polycarbonate:
 
 ```gcode
-   iDryer_OFF
+    PC_U1
 ```
 
-### Manual Commands
+## Usage
+
+* Set drying temperature:
 
 ```gcode
-   OFF_U1
-   ABS_U1
-   PLA_U1
-   SET_SERVO SERVO=srv_U1 ANGLE=90
+    DRY_UNIT1 UNIT_TEMPERATURE=60
 ```
+
+* Stop heating:
+
+```gcode
+    iDryer_OFF  ; Turn off dryer heating
+```
+
+### **Example Commands for Dryer Operation**
+
+* **Turn off drying**:
+
+  ```gcode
+  OFF_U1
+  ```
+* **Start drying for ABS**:
+
+  ```gcode
+  ABS_U1
+  ```
+* **Start drying for PLA**:
+
+  ```gcode
+  PLA_U1
+  ```
+* **Manually open damper**:
+
+  ```gcode
+  SET_SERVO SERVO=srv_U1 ANGLE=90
+  ```
 
 ---
 
-## Conclusion
+## **Conclusion**
 
-Proper iDryer Unit tuning (PID, delta, servo) ensures stable, efficient filament drying.
+Configuring the iDryer Unit requires precise tuning of PID parameters, `variable_delta_high`, and servo operation. When properly set up, the system will function reliably and efficiently, ensuring high-quality filament drying.
 
-## Alternative High-End Algorithm
+## Alternative Control Algorithm
 
-**By @Xatang**
+High-End option by @Xatang
 
-Advanced auto-drying and storage control with graphs and tunable variables.
+Automatic maintenance of optimal drying and storage parameters, with customizable variables and coefficients, and informative charts.
 
 ![xatang](imgweb/xatang.jpg)
 
-[Visit GitHub project](https://github.com/xatang/PyUnit)
+[Visit the project repository on GitHub](https://github.com/xatang/PyUnit)
 
----
+## General Safety Precautions:
 
-## General Safety Guidelines
+Disconnect the unit from power before any work.
 
-* Unplug before service
-* Avoid contact with live parts
-* Inspect wiring before use
-* Don’t use with damaged case/wires
-* Never leave powered on unattended
-* Ensure proper grounding
-* If smoke/smell/heat → unplug
-* Avoid moisture/condensation
+Do not touch exposed live parts.
 
-### Additional Electrical Safety
+Inspect wiring integrity before powering on.
 
-* Use circuit breaker or overload relay
-* Ensure all insulation is intact
+Do not operate the device with a damaged case or exposed wires.
 
-**Violation of these rules can lead to injury or fire. If unsure, consult an electrician.**
+Do not leave the device unattended while powered on.
 
----
+Ensure proper grounding of all metal parts.
 
-## Need Help?
+If you detect a burning smell, smoke, or the case overheats - immediately disconnect the unit.
 
-### Support
+Avoid moisture or condensation on device components.
 
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue?style=for-the-badge&logo=telegram)](https://t.me/iDryer)
-[![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@iDryerProject)
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue?style=for-the-badge&logo=github)](https://github.com/pavluchenkor/iDryer-Unit)
-[![Discord](https://img.shields.io/discord/123456789012345678?label=Discord&logo=discord&logoColor=white&color=5865F2&style=for-the-badge)](https://discord.gg/1332280943465201724)
+**Additional Connection Requirements:**
+
+Use a circuit breaker or overload protection relay.
+
+All connections must maintain electrical insulation.
+
+Failure to follow these rules may result in serious injury or death!
+
+If you lack experience with electrical equipment, consult a qualified professional.
+
+## Questions?
+
+### Contact & Support
+
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue?style=for-the-badge\&logo=telegram)](https://t.me/iDryer)
+[![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red?style=for-the-badge\&logo=youtube)](https://www.youtube.com/@iDryerProject)
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue?style=for-the-badge\&logo=github)](https://github.com/pavluchenkor/iDryer-Unit)
+[![Discord](https://img.shields.io/discord/123456789012345678?label=Discord\&logo=discord\&logoColor=white\&color=5865F2\&style=for-the-badge)](https://discord.gg/1332280943465201724)

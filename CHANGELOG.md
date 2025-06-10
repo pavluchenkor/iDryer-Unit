@@ -1,5 +1,7 @@
-### Переписаны конфиги в соответствии с количеством mcu
+###
 
-### Перевод на английский
+### ### Rewritten configs to match the number of mcu's
 
-### Изменение структуры документации
+### Translated into English
+
+### Changed documentation structure
