@@ -2,7 +2,6 @@
 # Модели для печати
 !!! success "Файлы для печати"
 
-    
     **[База MCU](CAD/v3/UNIT%20MCU%20Base%20screw%20mounting.stl)**
 
     **[База EXT](CAD/v3/UNIT%20EXT%20Base%20screw%20mounting.stl)**
