@@ -93,7 +93,7 @@ pip3 install pyserial
 
 ```
 cd ~/katapult/scripts
-python3 flashtool.py -d usb-katapult_rp2040_XXXXXXXXXXXXXXXX-XXXX
+python3 flashtool.py -d /dev/serial/by-id/usb-katapult_rp2040_XXXXXXXXXXXXXXXX-XXXX
 ```
 
 Run

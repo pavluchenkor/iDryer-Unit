@@ -55,6 +55,7 @@ ssh user_name@printer_address
 ```bash
 cd ~/Printer_name/config/
 ```
+Это может быть "klipper_config" или "Printer_data" в зависимости от версии и конфигурации установки
 
 !!! note "Важно"
 
