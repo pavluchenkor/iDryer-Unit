@@ -16,6 +16,24 @@ Assemble the remaining components according to the instruction.
 
 ## Instruction
 
+### Installing the Thermistor and thermal fuse
+
+!!! warning "Installing the thermistor"
+    Make sure that the thermistor wires do not come into contact with the metal body of the heater. If you're unsure, insulate the thermistor - for example, by wrapping it with Kapton tape or placing it in any heat-resistant insulating material, such as a Teflon sleeve or heat-shrink tubing.
+    
+    Keep in mind that the heater temperature can reach up to 140°C.
+
+!!! warning "Thermal Fuse Installation"
+    You can install either a resettable thermal switch (such as the KSD9700) or a thermal fuse.
+
+    Keep in mind that a thermal fuse is a one-time protection device: when the rated temperature is exceeded, it permanently breaks the circuit and must be replaced with an identical fuse.
+
+    In contrast, the KSD9700 is a bimetallic thermal switch. It cuts off power when a set temperature is reached and automatically reconnects the circuit once the temperature drops below the threshold. This allows the system to recover without needing to replace the component.
+
+    From a safety perspective, a thermal fuse offers more reliable protection, as it completely shuts down the system in case of overheating and prevents it from turning back on automatically.
+
+    Since this is a DIY project, and working with heating elements requires a clear understanding of electrical safety, it’s recommended to first test your setup using a KSD9700, and once everything is working correctly, replace it with an appropriate thermal fuse(one suitable option is the RH130 model) for maximum safety.
+
 <div class="grid cards" markdown>
 - ![1](imgweb/001.jpg)
 - ![2](imgweb/002.jpg)
