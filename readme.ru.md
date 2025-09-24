@@ -1,7 +1,7 @@
 ![iDryer Unit Master](imgweb/iDryer.png)
 
 
-[![Discord](https://img.shields.io/badge/discord-Join%20Chat-5865F2?logo=discord)](https://discord.gg/hpNDbvxC)
+[![Discord](https://img.shields.io/badge/discord-Join%20Chat-5865F2?logo=discord)](https://discord.gg/jGce5eeHHz)
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit) 
 
 # iDryer Unit - система сушки пластика для 3D-принтеров на базе Klipper
@@ -124,4 +124,4 @@
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue?style=for-the-badge&logo=telegram)](https://t.me/iDryer)
 [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@iDryerProject)
 [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue?style=for-the-badge&logo=github)](https://github.com/pavluchenkor/iDryer-Unit)
-[![Discord](https://img.shields.io/discord/123456789012345678?label=Discord&logo=discord&logoColor=white&color=5865F2&style=for-the-badge)](https://discord.gg/hpNDbvxC)
+[![Discord](https://img.shields.io/discord/123456789012345678?label=Discord&logo=discord&logoColor=white&color=5865F2&style=for-the-badge)](https://discord.gg/jGce5eeHHz)

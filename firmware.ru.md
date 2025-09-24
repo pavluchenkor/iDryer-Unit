@@ -2,6 +2,17 @@
 
 ## Установка Katapult
 
+Перед началом установки убедитесь, что система обновлена, и установлены необходимые пакеты. Выполните следующие команды, если требуется обновление или установка зависимостей:
+
+```
+sudo apt update
+sudo apt install git build-essential gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib cmake python3 python3-pip python3-serial usbutils dfu-util
+```
+
+Эти команды обновят список пакетов и установят инструменты, необходимые для компиляции и прошивки Katapult, включая компилятор для ARM, Python и утилиты для работы с USB-устройствами.
+
+Скачайте исходный код Katapult с GitHub, выполнив следующую команду:
+
 ```
 git clone https://github.com/Arksine/katapult
 ```

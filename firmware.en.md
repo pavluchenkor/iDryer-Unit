@@ -2,6 +2,17 @@
 
 ## Installing Katapult
 
+Before starting the installation, ensure that the system is up-to-date and that the required packages are installed. Execute the following commands if an update or dependency installation is needed:
+
+```
+sudo apt update
+sudo apt install git build-essential gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib cmake python3 python3-pip python3-serial usbutils dfu-util
+```
+
+These commands will update the package list and install the tools necessary for compiling and flashing Katapult, including the ARM compiler, Python, and utilities for working with USB devices.
+
+Download the Katapult source code from GitHub by executing the following command:
+
 ```
 git clone https://github.com/Arksine/katapult
 ```
