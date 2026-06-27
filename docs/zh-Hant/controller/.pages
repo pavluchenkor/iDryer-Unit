@@ -1,0 +1,8 @@
+title: 控制器
+nav:
+  - 電路板: board.md
+  - Klipper:
+      - 韌體: firmware.md
+      - 設定: user-guide.md
+      - 疑難排解: troubleshooting.md
+  - DIY: diy.md

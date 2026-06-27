@@ -1,0 +1,8 @@
+title: Řadič
+nav:
+  - Deska: board.md
+  - Klipper:
+      - Firmware: firmware.md
+      - Konfigurace: user-guide.md
+      - Řešení problémů: troubleshooting.md
+  - DIY: diy.md

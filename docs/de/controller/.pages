@@ -1,0 +1,8 @@
+title: Controller
+nav:
+  - Platine: board.md
+  - Klipper:
+      - Firmware: firmware.md
+      - Konfiguration: user-guide.md
+      - Fehlerbehebung: troubleshooting.md
+  - DIY: diy.md

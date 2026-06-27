@@ -1,0 +1,8 @@
+title: Controller
+nav:
+  - Board: board.md
+  - Klipper:
+      - Firmware: firmware.md
+      - Configuration: user-guide.md
+      - Troubleshooting: troubleshooting.md
+  - DIY: diy.md

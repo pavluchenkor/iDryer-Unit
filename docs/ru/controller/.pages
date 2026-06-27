@@ -1,0 +1,8 @@
+title: Контроллер
+nav:
+  - Плата: board.md
+  - Klipper:
+      - Прошивка: firmware.md
+      - Настройка: user-guide.md
+      - Устранение неисправностей: troubleshooting.md
+  - DIY: diy.md

@@ -1,6 +1,4 @@
-###
-
-### ### Rewritten configs to match the number of mcu's
+### Rewritten configs to match the number of mcu's
 
 ### Translated into English
 

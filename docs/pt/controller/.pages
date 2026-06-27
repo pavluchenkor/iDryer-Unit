@@ -1,0 +1,8 @@
+title: Controlador
+nav:
+  - Placa: board.md
+  - Klipper:
+      - Firmware: firmware.md
+      - Configuração: user-guide.md
+      - Solução de problemas: troubleshooting.md
+  - DIY: diy.md

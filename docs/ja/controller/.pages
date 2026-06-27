@@ -1,0 +1,8 @@
+title: コントローラー
+nav:
+  - ボード: board.md
+  - Klipper:
+      - ファームウェア: firmware.md
+      - 設定: user-guide.md
+      - トラブルシューティング: troubleshooting.md
+  - DIY: diy.md
