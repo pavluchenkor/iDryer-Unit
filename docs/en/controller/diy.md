@@ -6,7 +6,7 @@ This section is for those who want to build the controller themselves — withou
 
 ## RP2040 Pinout
 
-![RP2040 Pinout](../../imgweb/rp2040_pinout.png)
+![RP2040 Pinout](../../img/rp2040_pinout.png)
 
 ---
 
@@ -14,7 +14,7 @@ This section is for those who want to build the controller themselves — withou
 
 Three RJ45 connectors (U6/U7/U8) for connecting EXT boards. Each connector carries: SRV (servo), T (temperature sensor), FAN (fan), H (heater), SDA/SCL (I²C), +5 V, GND.
 
-![RJ45 Pinout](../../imgweb/rj45_pinout.png)
+![RJ45 Pinout](../../img/rj45_pinout.png)
 
 ---
 

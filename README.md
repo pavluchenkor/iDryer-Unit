@@ -1,4 +1,4 @@
-![iDryer Unit Master](imgweb/iDryer.png)
+![iDryer Unit Master](docs/img/iDryer.png)
 
 [![Discord](https://img.shields.io/badge/discord-Join%20Chat-5865F2?logo=discord)](https://discord.gg/jGce5eeHHz)
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit) 
@@ -7,17 +7,17 @@
 
 ### Project Release
 
-![iDryer Unit Master](imgweb/iDryerWithSpool.png)
+![iDryer Unit Master](img/iDryerWithSpool.png)
 
 This project is a modular filament drying control system for 3D printers. It supports up to four drying units, each with individual temperature and humidity settings. The system allows setting temperatures up to 90°C and includes a storage mode that maintains minimal humidity to prevent filament reabsorption.
 
 Additionally, iDryer Unit supports connection to a Telegram bot to receive notifications about drying status, process completion, and events like overheating. For visual indication, addressable LEDs can be used-an output on the MCU board allows connecting an LED strip to display various states (e.g., active drying mode, cycle completion, or errors). The system can leverage Klipper functionality to show temperature, humidity, remaining drying time, automatically log events, and integrate with macros. It also supports advanced user profiles and extended scenarios such as scheduled startup, critical event alerts, and lighting features like color changes between modes.
 
-![iDryer Unit Master](imgweb/klipper222252.jpg)
+![iDryer Unit Master](img/klipper222252.jpg)
 
 ## Key Features
 
-![iDryer Unit Master](imgweb/IMG_2186.jpg)
+![iDryer Unit Master](img/IMG_2186.jpg)
 
 * **Operating Modes: Drying and Storage.** Drying filament up to 90°C and maintaining ideal temperature and humidity for storage.
 
@@ -44,8 +44,8 @@ Additionally, iDryer Unit supports connection to a Telegram bot to receive notif
 * **Safety:** Includes 130°C KSD9700 thermostat and Klipper safety mechanisms.
 
 * **Drying Efficiency:** Features a humidity sensor and a servo-driven damper to manage chamber ventilation and achieve optimal drying results.
-  ![iDryer Unit Master](imgweb/IMG_2168.jpg)
-  ![iDryer Unit Master](imgweb/IMG_2170.jpg)
+  ![iDryer Unit Master](img/IMG_2168.jpg)
+  ![iDryer Unit Master](img/IMG_2170.jpg)
 
 ## Benefits of Use
 

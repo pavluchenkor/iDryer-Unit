@@ -201,7 +201,7 @@
 
 ### Ориентация деталей на столе
 
-![1](../../imgweb/unit_slicer_2.png)
-![2](../../imgweb/unit_slicer_3.png)
-![3](../../imgweb/unit_slicer_1.png)
-![4](../../imgweb/unit_slicer_4.png)
+![1](../../img/unit_slicer_2.png)
+![2](../../img/unit_slicer_3.png)
+![3](../../img/unit_slicer_1.png)
+![4](../../img/unit_slicer_4.png)

@@ -4,7 +4,7 @@ iDryer Unit is a modular filament drying and storage system for 3D printers. Pri
 
 Drying temperature — up to 90 °C in a standard enclosure, up to 110 °C with heat-resistant enclosure materials. Supported modes: Drying, Storage, and Profile.
 
-![iDryer Unit](../imgweb/iDryer.png)
+![iDryer Unit](../../img/iDryer.png)
 
 ## Who this project is for
 
@@ -14,7 +14,7 @@ All components are standard and readily available: fan, PTC heater, temperature 
 
 The enclosure is printed on any 3D printer. Schematics, firmware, and documentation are open.
 
-![iDryer Unit with spool](../imgweb/iDryerWithSpool.png)
+![iDryer Unit with spool](../../img/iDryerWithSpool.png)
 
 ---
 
@@ -24,7 +24,7 @@ Choose a scenario before starting assembly — it determines the firmware and co
 
 ### Klipper
 
-![Klipper](../imgweb/klipper222252.jpg)
+![Klipper](../../img/klipper222252.jpg)
 
 The Unit controller connects to the printer host and operates as `[mcu]` or `[second_mcu]` in Klipper. Control is via the Fluidd / Mainsail interface, G-code macros, and integration with the main printer config.
 
@@ -40,7 +40,7 @@ Suitable if:
 
 ### Standalone
 
-![iDryer Portal](../imgweb/portal_screenshot.png)
+![iDryer Portal](../../img/portal_screenshot.png)
 
 The controller operates independently: its own firmware, control via the cloud portal [portal.idryer.org](https://portal.idryer.org/) and mobile app. Optionally — local control via OLED display and encoder. Scales (filament remainder control by weight) and RFID (automatic spool identification) are supported.
 
@@ -87,8 +87,8 @@ Suitable if:
 
 Each chamber has a servo-controlled damper. The servo opens the damper on a schedule to vent moisture-saturated air and closes it to retain heat. The SHT3X sensor continuously monitors temperature and humidity inside the chamber — the firmware adjusts the damper and heater operation based on this data.
 
-![iDryer Unit damper](../imgweb/IMG_2168.jpg)
-![Damper mechanism](../imgweb/IMG_2170.jpg)
+![iDryer Unit damper](../../img/IMG_2168.jpg)
+![Damper mechanism](../../img/IMG_2170.jpg)
 
 ---
 
