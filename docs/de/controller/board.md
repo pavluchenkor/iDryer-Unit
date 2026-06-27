@@ -1,9 +1,15 @@
-<!-- i18n-placeholder: true -->
+# Steuerung
 
-# Translation wanted
+Das System ist auf zwei Arten von Platten aufgebaut: die Hauptplatine MCU und die Erweiterungsplatten EXT.
 
-This page is not available in this language yet.
+## iDryer Unit MCU
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+Die Hauptplatine mit Mikrocontroller. Sie steuert das gesamte System: liest Sensoren aus, steuert den Heizer, Lüfter und Servo der Klappenvorrichtung. Die Verbindung zum Host erfolgt über USB-C. Drei RJ45-Stecker für die Verbindung von EXT-Platten.
 
-Thank you for helping make the documentation available to more makers.
+![MCU-Platine](../../img/MCU_PCB.png)
+
+## iDryer Unit EXT
+
+Erweiterungsplatine ohne Mikrocontroller. Sie wird über RJ45-Patchkabel mit der MCU verbunden und wird von ihr direkt gesteuert. Für jeden zusätzlichen Trocknerblock wird eine EXT-Platine benötigt.
+
+![EXT-Platine](../../img/EXT_PCB.png)

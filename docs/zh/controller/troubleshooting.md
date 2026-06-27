@@ -1,9 +1,91 @@
-<!-- i18n-placeholder: true -->
+# iDryer Unit 连接问题解决
 
-# Translation wanted
+使用 **iDryer Unit** 时，在某些情况下可能会出现连接稳定性问题（连接中断、MCU 丢失、不稳定操作）。  
+大多数情况下，这不是由设备本身引起的，而是由外部因素引起：振动、电磁干扰或负载特性。
 
-This page is not available in this language yet.
+下面列出了主要原因和解决方法。
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+---
 
-Thank you for helping make the documentation available to more makers.
+## 1. USB 电缆振动
+
+!!! warning "症状"
+    - 周期性连接中断  
+    - 设备从系统中消失  
+    - 触摸电缆时连接恢复  
+
+!!! info "原因"
+    来自打印机或干燥器的振动可能导致 USB 连接器微微移位，导致临时接触丢失。
+
+!!! success "解决方案"
+    - 将 USB 电缆牢牢固定在连接器中  
+    - 避免对电缆施加张力  
+    - 如果需要：
+        - 使用配合更紧密的电缆  
+        - 用热胶 / 扎带 / 固定器固定电缆  
+
+---
+
+## 2. 电源电缆干扰
+
+!!! warning "症状"
+    - 打开加热器或风扇时连接丢失  
+    - 设备随机重启  
+    - 无明显原因的不稳定操作  
+
+!!! info "原因"
+    交流电源电缆产生电磁干扰，耦合到 USB 电缆。
+
+!!! success "解决方案"
+    - 将 USB 电缆和电源电缆分离尽可能远  
+    - 不要将它们安装在同一电缆槽中  
+    - 避免长距离平行敷设  
+    - 在靠近控制器和/或打印机板的 USB 电缆上安装铁氧体滤波器（铁氧体圆筒）
+
+---
+
+## 3. 风扇干扰
+
+!!! warning "症状"
+    - 打开/关闭风扇时连接丢失  
+    - 故障与干燥器风扇运转时间一致  
+    - PWM 控制下不稳定  
+
+!!! info "原因"
+    110–230 V 风扇配备开关电源，可能产生影响信号线的干扰。
+
+!!! success "解决方案"
+    建议在风扇两端安装 **RC 抑制器（snubber）**。或在 USB 电缆上使用铁氧体滤波器。
+
+---
+
+## 4. USB 3.0 端口 – 运行期间的问题
+
+!!! warning "症状"
+    - 运行期间周期性连接中断  
+    - 设备无故从系统中消失  
+    - 切换到其他端口时问题消失  
+
+!!! info "原因"
+    这是以全速模式（USB 2.0）运行并连接到 USB 3.0 端口的 USB 设备的常见问题。现代计算机在 USB 3.0 端口中使用 eUSB2 中继器，这些不完全兼容 USB 2.0 规范——导致同步错误和设备枚举错误。STMicroelectronics 已正式确认此问题：[ST 网站上的常见问题解答](https://community.st.com/t5/stm32-mcus/faq-possible-communication-failure-between-stlink-v3-and-some/ta-p/736578)。
+
+!!! success "解决方案"
+    - 仅将 iDryer Unit 连接到 **USB 2.0 端口**（通常为黑色连接器）  
+    - 如果所有端口都是 USB 3.0 — 使用**带有 USB 2.0 端口的主动 USB 集线器**
+
+---
+
+## 5. USB 3.0 端口 – 固件烧录期间的问题
+
+!!! warning "症状"
+    - 控制器在引导加载程序模式（BOOTSEL）中无法识别  
+    - 固件烧录失败或挂起  
+    - 设备被识别，但镜像写入失败  
+
+!!! info "原因"
+    相同的 USB 3.0 / xHCI 兼容性问题。在通过现代笔记本电脑上的 USB Type-C 端口进行烧录时尤其相关——这些端口更频繁地使用有问题的 eUSB2 中继器。
+
+!!! success "解决方案"
+    - 烧录时，仅将控制器连接到 **USB 2.0 端口**  
+    - 优先使用 PC 背面的 USB Type-A 端口  
+    - 如果问题仍然存在 — 使用**带有 USB 2.0 端口的主动 USB 集线器**

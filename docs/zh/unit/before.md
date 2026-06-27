@@ -1,9 +1,70 @@
-<!-- i18n-placeholder: true -->
+# 组装前
 
-# Translation wanted
+在购买组件之前，请先了解本部分。确保所有必要的零件和工具都可用。
 
-This page is not available in this language yet.
+!!! warning "电气安全"
+    设备在110-230V电源电压下工作。开始前，请阅读[安全](safety.md)部分。
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+---
 
-Thank you for helping make the documentation available to more makers.
+## CAD模型
+
+在开始组装之前打印外壳。模型和打印参数: [CAD](cad.md).
+
+外壳材料: **ABS、ABS-CF、ABS-GF、PC或HTPLA**。不要使用PLA或PETG — 它们无法承受工作温度。
+
+---
+
+## 单个单元的组件包
+
+### 电子产品和组件
+
+| 组件 | 数量 | 注记 |
+|---|---|---|
+| iDryer Unit MCU板 | 1 | 主块;每个附加块 — EXT板 |
+| PTC加热元件110-230V，100W | 1 | |
+| 风扇 | 1 | 用于空气循环 |
+| NTC温度传感器100K | 1 | 或任何Klipper/Standalone支持的传感器 |
+| SHT3X温度和湿度传感器 | 1 | 或任何固件支持的I2C传感器 |
+| 热保护装置KSD9700（130°C） | 1 | 或一次性热熔断器RH130 |
+| 阻尼器伺服 | 1 | 3.7克或9克(参见CAD部分) |
+| RJ45补丁电缆 | EXT块数 | 标准，Cat5e或更高 |
+
+### 紧固件和连接器
+
+| 位置 | 注记 |
+|---|---|
+| 接线柱 | 根据电路板原理图 |
+| USHVI端子 | 用于压接加热电缆 |
+| 热收缩管 | 用于隔离连接 |
+
+### 软件
+
+在组装前，决定操作模式——这决定了固件:
+
+- **Klipper** — 需要安装了Klipper的打印机。
+- **Standalone** — 无需打印机即可工作，通过屏幕和/或门户进行控制。
+
+有关选择的更多信息，请参阅"关于项目"部分。
+
+---
+
+## 工具
+
+- 压接工具(RJ45压接工具)
+- USHVI端子压接钳
+- 烙铁(如果需要)
+- 万用表以检查连接
+- 所需尺寸的螺丝刀和扳手
+
+---
+
+## 建议
+
+在桌子上组装系统而不安装到外壳中，并进行初始测试:
+
+1. 将加热元件、风扇、传感器和伺服连接到电路板。
+2. 加载固件并验证每个组件都能正常工作。
+3. 只有在测试成功后，才能将组件安装到外壳中。
+
+在最后组装时，将传感器和电源电缆缩短到最小必需长度。

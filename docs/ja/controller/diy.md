@@ -1,9 +1,31 @@
-<!-- i18n-placeholder: true -->
+# DIYコントローラー
 
-# Translation wanted
+コントローラーを自分で組み立てたい人向けのセクション – プリメイドMCUボード不要です。
 
-This page is not available in this language yet.
+---
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+## RP2040ピンアウト
 
-Thank you for helping make the documentation available to more makers.
+![RP2040ピンアウト](../../img/rp2040_pinout.png)
+
+---
+
+## RJ45コネクターピンアウト
+
+3つのRJ45コネクター (U6/U7/U8) で EXT ブロックを接続します。各コネクターは以下を伝送します: SRV (サーボ)、T (温度センサー)、FAN (ファン)、H (ヒーター)、SDA/SCL (I²C)、+5 V、GND。
+
+![RJ45ピンアウト](../../img/rj45_pinout.png)
+
+---
+
+## プロトタイプボード (EasyEDA)
+
+最小限の予算で、ブレッドボード上に手作業で組み立てます。機能するプロトタイプ – 常時使用は想定されていません。
+
+→ [EasyEDA プロジェクト](https://oshwlab.com/pavluchenko.r/2channel-dimmer-bread-board)
+
+---
+
+## プリンターボード + SSR
+
+MCUとしての古いプリンターボードと、110–230 V負荷制御用のソリッドステートリレー。利用可能な GPIO 出力と互換性のある Klipper ファームウェアが必要です。

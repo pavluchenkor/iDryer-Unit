@@ -1,9 +1,129 @@
-<!-- i18n-placeholder: true -->
+# iDryer Unit
 
-# Translation wanted
+iDryer Unit — 3Dプリンター用フィラメント乾燥・保管モジュール式システム。1個または2個のスプールに対応した3Dプリント可能なハウジングと、1つのシステムで最大4つの独立した乾燥チャンバー。
 
-This page is not available in this language yet.
+乾燥温度は標準ハウジングで最大90°C、耐熱素材使用時で最大110°C。対応モード — 乾燥(Drying)、保管(Storage)、プロファイル(Profile)。
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+![iDryer Unit](../img/iDryer.png)
 
-Thank you for helping make the documentation available to more makers.
+## このプロジェクトの対象者
+
+iDryer Unit — プロセスの確実な制御が可能な信頼性の高い乾燥機を求める方向けのDIYプロジェクトであり、クローズドな設計の既製商品ではありません。
+
+すべてのコンポーネントは標準的で入手容易です：ファン、PTC加熱素子、温湿度センサ、サーボドライブ、温度保護装置。それぞれを専用部品を探すことなく交換できます。ほとんどの量産乾燥機と異なり、修理または改善できないものはありません。
+
+ハウジングは任意の3Dプリンターで印刷可能です。回路図、ファームウェア、ドキュメントはすべてオープンです。
+
+![スプール付きiDryer Unit](../img/iDryerWithSpool.png)
+
+---
+
+## 2つの動作モード
+
+組立前にシナリオを選択してください — ファームウェアと制御方法が異なります。
+
+### Klipper
+
+![Klipper](../img/klipper222252.jpg)
+
+UnitコントローラーはプリンターホストとKlipperの`[mcu]`または`[second_mcu]`として接続されます。制御はFluidd / Mainsailインターフェース、Gコードマクロ、プリンターメイン設定の統合を通じて行われます。
+
+Klipperの追加機能が利用可能です：Telegramボットを通じた通知（乾燥状態、サイクル完了、過熱警告）、ステータス表示用アドレス指定LED ストリップ、イベントの自動ログ記録。
+
+以下の場合に適しています：
+
+- Klipperがすでに動作している
+- プリンターインターフェースから直接乾燥機を制御したい
+- マクロとスケジュール機能の深い統合が必要
+
+→ [Klipperファームウェア](controller/firmware.md)
+
+### Standalone
+
+![iDryer Portal](../img/portal_screenshot.png)
+
+コントローラーは独立して動作します：独自ファームウェア、クラウドポータル[portal.idryer.org](https://portal.idryer.org/)とモバイルアプリによる制御。オプションで OLED画面とエンコーダによるローカル制御。スケール（フィラメント残量の重量制御）と RFID（スプール自動認識）をサポート。
+
+以下の場合に適しています：
+
+- プリンターから独立した乾燥機が欲しい
+- モバイルアプリまたはポータルによるリモート制御が必要
+- 1つの管理ポイントで複数の乾燥機を使用
+
+→ [Standalone：ファームウェアについて](../../../iDryerRP2040/README.md)
+
+---
+
+## 仕様
+
+| パラメータ | 値 |
+|---|---|
+| 乾燥温度 | 最大90°C（耐熱ハウジングで最大110°C） |
+| モード | Drying、Storage、Profile（Standalone） |
+| チャンバー数 | 1～4個（MCU + 最大3 × EXT） |
+| モジュール接続 | RJ45パッチコード |
+| 温度保護装置 | KSD9700（130°C） |
+| 過電流保護 | 2Aヒューズ |
+| 加熱素子 | PTC、完全電気絶縁 |
+| スプール | チャンバー当たり1～2個；幅最大85mm、直径最大200mm |
+| ハウジングバリエーション | 1スプール用と2スプール用 |
+| ハウジング素材 | 3Dプリント、ABS / ABS-CF / PC / HTPLA |
+| 湿度センサ | SHT3Xまたはファームウェアがサポートする任意のセンサ |
+| LED表示 | MCUボード上の指定済みLEDストリップ出力 |
+
+---
+
+## 動作モード
+
+**Drying（乾燥）** — 温度と時間を設定します。サイクル終了後、システムは自動的にStorageモードに切り替わります。
+
+**Storage（保管）** — 設定された温度と最小湿度レベルを維持します。パラメータが超過されると、加熱素子とファンが起動します。
+
+**Profile（プロファイル）** — カスタマイズ可能なパラメータとモード遷移を備えたユーザー定義シナリオ。Standaloneファームウェアで利用可能。
+
+---
+
+## 湿度管理
+
+各チャンバーは制御可能なダンパーを備えています。サーボドライブはスケジュールに従ってダンパーを開き、湿った空気を排出し、熱を保持するために閉じます。SHT3Xセンサーはチャンバー内の温度と湿度を継続的に監視 — ファームウェアはこのデータに基づいてダンパーと加熱素子の動作モードを補正します。
+
+![iDryer Unitダンパー](../img/IMG_2168.jpg)
+![ダンパーメカニズム](../img/IMG_2170.jpg)
+
+---
+
+## システムアーキテクチャ
+
+1つの**iDryer Unit MCU**ブロックがシステムを制御します。RJ45を通じて、最大3つの独立したマイクロコントローラーを持たない**iDryer Unit EXT**ブロックが直接接続されます。
+
+```
+              ┌— RJ45 — [EXT U2]
+[MCU] ————————┼— RJ45 — [EXT U3]
+              └— RJ45 — [EXT U4]
+```
+
+各ブロックは独立した乾燥チャンバーで、独自のセンサ、加熱素子、ファン、ダンパーサーボドライブを装備。
+
+---
+
+## 組み込みセーフティー
+
+- **KSD9700** — 130°Cの温度保護装置：過熱時に加熱素子回路を物理的に遮断します。
+- **2Aヒューズ** — 異常電流時の保護。
+- **PTC加熱素子** — 加熱素子のハウジングは電圧供給下にありません。
+- **ソフトウェア保護** — Klipper（またはStandaloneファームウェア）が温度、センサの有無を監視し、エラー時に加熱を遮断します。
+
+!!! danger "AC電源での作業"
+    このデバイスには110～230Vの電圧下にあるコンポーネントが含まれます。電気工事を行う前に必ず電源を切ってください。詳細は[安全性](unit/safety.md)セクションを参照してください。
+
+---
+
+## クイックスタート
+
+1. **ハウジングを印刷** → [CAD：印刷用モデル](unit/cad.md)
+2. **部品を用意** → [組立前の準備](unit/before.md)
+3. **デバイスを組立** → [組立](unit/assembly.md)
+4. **ファームウェアをインストール**：
+   - Klipper → [Klipperファームウェア](controller/firmware.md)
+   - Standalone → [Standalone インストール](../../../iDryerRP2040/docs/manual/firmware_install.md)
+5. **システムを設定** → [ユーザーガイド](controller/user-guide.md)

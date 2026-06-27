@@ -1,9 +1,31 @@
-<!-- i18n-placeholder: true -->
+# Řadič DIY
 
-# Translation wanted
+Oddíl pro ty, kteří si chtějí sestavit řadič sami – bez předem připravené desky MCU.
 
-This page is not available in this language yet.
+---
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+## Rozlož pinů RP2040
 
-Thank you for helping make the documentation available to more makers.
+![Rozlož pinů RP2040](../../img/rp2040_pinout.png)
+
+---
+
+## Rozlož pinů konektorů RJ45
+
+Tři konektory RJ45 (U6/U7/U8) pro připojení bloků EXT. Každý konektor přenáší: SRV (servo), T (teplotní senzor), FAN (ventilátor), H (topný prvek), SDA/SCL (I²C), +5 V, GND.
+
+![Rozlož pinů RJ45](../../img/rj45_pinout.png)
+
+---
+
+## Prototypovací deska (EasyEDA)
+
+Minimální rozpočet, ruční montáž na nepájivé desce. Funkční prototyp – není určen pro trvalý provoz.
+
+→ [Projekt EasyEDA](https://oshwlab.com/pavluchenko.r/2channel-dimmer-bread-board)
+
+---
+
+## Deska tiskárny + SSR
+
+Stará deska tiskárny jako MCU a polovodičová relé pro ovládání zátěže 110–230 V. Vyžaduje dostupné výstupy GPIO a kompatibilní firmware Klipper.

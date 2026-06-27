@@ -1,9 +1,15 @@
-<!-- i18n-placeholder: true -->
+# Controlador
 
-# Translation wanted
+O sistema é construído em dois tipos de placas: unidade principal MCU e blocos de extensão EXT.
 
-This page is not available in this language yet.
+## iDryer Unit MCU
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+Placa principal com microcontrolador. Controla todo o sistema: lê sensores, gerencia o aquecedor, ventilador e servomotor da comporta. Conexão com o host via USB-C. Três conectores RJ45 para conectar blocos EXT.
 
-Thank you for helping make the documentation available to more makers.
+![Placa MCU](../../img/MCU_PCB.png)
+
+## iDryer Unit EXT
+
+Placa de expansão sem microcontrolador. Conecta-se ao MCU via cabo patch RJ45 e é controlada diretamente por ele. Um bloco EXT para cada unidade de secagem adicional.
+
+![Placa EXT](../../img/EXT_PCB.png)
