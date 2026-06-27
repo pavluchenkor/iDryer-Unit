@@ -41,10 +41,10 @@ This page describes the physical assembly of the iDryer Unit enclosure and elect
 ### Steps 1–4: Main chamber
 
 <div class="grid cards" markdown>
-- ![1](../../../imgweb/001.jpg)
-- ![2](../../../imgweb/002.jpg)
-- ![3](../../../imgweb/003.jpg)
-- ![4](../../../imgweb/004.jpg)
+- ![1](../../imgweb/001.jpg)
+- ![2](../../imgweb/002.jpg)
+- ![3](../../imgweb/003.jpg)
+- ![4](../../imgweb/004.jpg)
 </div>
 
 1. Install the spool holder rollers into the enclosure base.
@@ -58,9 +58,9 @@ This page describes the physical assembly of the iDryer Unit enclosure and elect
 ### Steps 5–7: Ventilation and damper
 
 <div class="grid cards" markdown>
-- ![5](../../../imgweb/005.jpg)
-- ![6](../../../imgweb/006.jpg)
-- ![7](../../../imgweb/007.jpg)
+- ![5](../../imgweb/005.jpg)
+- ![6](../../imgweb/006.jpg)
+- ![7](../../imgweb/007.jpg)
 </div>
 
 5. Install the fan in the enclosure, secure with fasteners.
@@ -70,9 +70,9 @@ This page describes the physical assembly of the iDryer Unit enclosure and elect
 ### Steps 8–10: Electronics compartment
 
 <div class="grid cards" markdown>
-- ![8](../../../imgweb/008.jpg)
-- ![9](../../../imgweb/009.jpg)
-- ![10](../../../imgweb/010.jpg)
+- ![8](../../imgweb/008.jpg)
+- ![9](../../imgweb/009.jpg)
+- ![10](../../imgweb/010.jpg)
 </div>
 
 8. Secure the control board in the electronics compartment.
@@ -86,7 +86,7 @@ This page describes the physical assembly of the iDryer Unit enclosure and elect
 
     The heater temperature may reach 140 °C.
 
-![Thermistor installation](../../../imgweb/thermistor.jpg)
+![Thermistor installation](../../imgweb/thermistor.jpg)
 
 ---
 

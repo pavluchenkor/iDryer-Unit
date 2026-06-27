@@ -45,7 +45,7 @@ make menuconfig
 
 Select parameters according to the screenshot:
 
-![Katapult menuconfig](../../../img/011.png)
+![Katapult menuconfig](../../img/011.png)
 
 !!! danger "Important"
     Make sure the configuration is correct. Overwriting the bootloader with an incorrect build will render the device non-functional — a programmer will be required for recovery.
@@ -95,7 +95,7 @@ make menuconfig
 
 Select parameters according to the screenshot:
 
-![Klipper menuconfig](../../../img/016.png)
+![Klipper menuconfig](../../img/016.png)
 
 ### 9. Build Klipper
 

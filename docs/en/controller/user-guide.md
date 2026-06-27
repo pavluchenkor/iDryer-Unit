@@ -280,6 +280,6 @@ SET_SERVO SERVO=srv_U1 ANGLE=0   ; close
 
 Community project by [@Xatang](https://github.com/xatang). Automatic maintenance of drying and storage parameters with configurable coefficients and informative graphs.
 
-![PyUnit](../../../imgweb/xatang.jpg)
+![PyUnit](../../imgweb/xatang.jpg)
 
 → [PyUnit repository on GitHub](https://github.com/xatang/PyUnit)

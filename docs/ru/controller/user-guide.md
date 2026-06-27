@@ -280,6 +280,6 @@ SET_SERVO SERVO=srv_U1 ANGLE=0   ; закрыть
 
 Проект от участника сообщества [@Xatang](https://github.com/xatang). Автоматическое поддержание параметров сушки и хранения с настраиваемыми коэффициентами и информативными графиками.
 
-![PyUnit](../../../imgweb/xatang.jpg)
+![PyUnit](../../imgweb/xatang.jpg)
 
 → [Репозиторий PyUnit на GitHub](https://github.com/xatang/PyUnit)
