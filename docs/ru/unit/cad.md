@@ -16,7 +16,7 @@
     | ![Задняя крышка отсека электроники MCU](../../img/PNG_200/UNIT_MCU_Back-Cover-3-ports.png) | [Задняя крышка отсека электроники MCU](../../../CAD/v4/STL/UNIT_MCU_Back-Cover-3-ports.stl) |
     | ![Корпус дисплея](../../img/PNG_200/UNIT_STANDALONE-FRONT-PANEL_ENCLOSURE.png) | [Корпус дисплея](../../../CAD/v4/STL/UNIT_STANDALONE-FRONT-PANEL_ENCLOSURE.stl) |
     | ![Ручка](../../img/PNG_200/UNIT_STANDALONE-FRONT-PANEL_Knob_2.1.png) | [Ручка](../../../CAD/v4/STL/UNIT_STANDALONE-FRONT-PANEL_Knob_2.1.stl) |
-    | ![Панель дисплаея](../../img/PNG_200/UNIT_STANDALONE-FRONT-PANEL_IDRYER_UNIT_display_panel3.png) | [Панель дисплаея](../../../CAD/v4/STL/UNIT_STANDALONE-FRONT-PANEL_IDRYER_UNIT_display_panel3.stl) |
+    | ![Панель дисплея](../../img/PNG_200/UNIT_STANDALONE-FRONT-PANEL_IDRYER_UNIT_display_panel3.png) | [Панель дисплея](../../../CAD/v4/STL/UNIT_STANDALONE-FRONT-PANEL_IDRYER_UNIT_display_panel3.stl) |
     | ![База - нижняя часть корпуса без барельефа](../../img/PNG_200/UNIT_EXT_base_plain.png) | [База EXT - нижняя часть корпуса без барельефа](../../../CAD/v4/STL/UNIT_EXT_base_plain.stl) |
     | ![База - нижняя часть корпуса](../../img/PNG_200/UNIT_EXT_base_embossed.png) | [База EXT - нижняя часть корпуса](../../../CAD/v4/STL/UNIT_EXT_base_embossed.stl) |
     | ![Задняя крышка отсека электроники EXT](../../img/PNG_200/UNIT_EXT_Back-Cover-1-port.png) | [Задняя крышка отсека электроники EXT](../../../CAD/v4/STL/UNIT_EXT_Back-Cover-1-port.stl) |
@@ -61,7 +61,7 @@
     | ![Задняя крышка отсека электроники MCU](../../img/PNG_200/UNIT_MCU_Back-Cover-3-ports.png) | [Задняя крышка отсека электроники MCU](../../../CAD/v4/STEP/UNIT_MCU_Back-Cover-3-ports.step) |
     | ![Корпус дисплея](../../img/PNG_200/UNIT_STANDALONE-FRONT-PANEL_ENCLOSURE.png) | [Корпус дисплея](../../../CAD/v4/STEP/UNIT_STANDALONE-FRONT-PANEL_ENCLOSURE.step) |
     | ![Ручка](../../img/PNG_200/UNIT_STANDALONE-FRONT-PANEL_Knob_2.1.png) | [Ручка](../../../CAD/v4/STEP/UNIT_STANDALONE-FRONT-PANEL_Knob_2.1.step) |
-    | ![Панель дисплаея](../../img/PNG_200/UNIT_STANDALONE-FRONT-PANEL_IDRYER_UNIT_display_panel3.png) | [Панель дисплаея](../../../CAD/v4/STEP/UNIT_STANDALONE-FRONT-PANEL_IDRYER_UNIT_display_panel3.step) |
+    | ![Панель дисплея](../../img/PNG_200/UNIT_STANDALONE-FRONT-PANEL_IDRYER_UNIT_display_panel3.png) | [Панель дисплея](../../../CAD/v4/STEP/UNIT_STANDALONE-FRONT-PANEL_IDRYER_UNIT_display_panel3.step) |
     | ![База - нижняя часть корпуса без барельефа](../../img/PNG_200/UNIT_EXT_base_plain.png) | [База - нижняя часть корпуса без барельефа](../../../CAD/v4/STEP/UNIT_EXT_base_plain.step) |
     | ![База - нижняя часть корпуса](../../img/PNG_200/UNIT_EXT_base_embossed.png) | [База - нижняя часть корпуса](../../../CAD/v4/STEP/UNIT_EXT_base_embossed.step) |
     | ![Задняя крышка отсека электроники EXT](../../img/PNG_200/UNIT_EXT_Back-Cover-1-port.png) | [Задняя крышка отсека электроники EXT](../../../CAD/v4/STEP/UNIT_EXT_Back-Cover-1-port.step) |
