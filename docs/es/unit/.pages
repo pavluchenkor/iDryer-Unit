@@ -4,3 +4,4 @@ nav:
   - CAD: cad.md
   - Antes del montaje: before.md
   - Montaje: assembly.md
+  - BOM: bom.md

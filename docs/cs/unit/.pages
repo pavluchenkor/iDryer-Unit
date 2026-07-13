@@ -4,3 +4,4 @@ nav:
   - CAD: cad.md
   - Před montáží: before.md
   - Montáž: assembly.md
+  - BOM: bom.md
