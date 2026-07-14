@@ -1,6 +1,8 @@
 
 # Modelle zum Drucken
 
+!!! info "材料消費量"
+    推奨設定でiDryer Unitの標準エンクロージャーを印刷するには、1kg未満のフィラメントが必要です。
 
 === "iDryer v4 stl"
 

@@ -1,6 +1,8 @@
 
 # Modelle zum Drucken
 
+!!! info "Materialverbrauch"
+    Für den Druck des Standard-iDryer-Unit-Gehäuses bei empfohlenen Einstellungen wird weniger als 1 kg Filament benötigt.
 
 === "iDryer v4 stl"
 

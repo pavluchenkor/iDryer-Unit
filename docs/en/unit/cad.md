@@ -1,5 +1,7 @@
 # Models for Printing
 
+!!! info "Material consumption"
+    Printing the standard iDryer Unit enclosure at recommended settings requires less than 1 kg of filament.
 
 === "iDryer v4 stl"
 

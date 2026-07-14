@@ -24,7 +24,7 @@ Vollständige Liste der Komponenten für den Zusammenbau eines iDryer-Unit-Modul
 | ![](../../img/bom-clip-pipe.png) | Clip Pipe Embedded Clamp Bowden Coupling | [ссылка](https://www.aliexpress.com/item/1005005702615883.html) | 1 |
 | ![](../../img/bom-silicone-tube.png) | Flexible Silicone Tube ID 1mm x OD 2mm | [ссылка](https://www.aliexpress.com/item/1005010788900111.html) | 1m |
 | ![](../../img/bom-bearing.png) | Miniature Bearings 693ZZ 3\*8\*4mm | [ссылка](https://www.aliexpress.com/item/32822351866.html) | 4 |
-| ![](../../img/bom-rod.png) | Rod Bar for Motor Shaft 90mm | [ссылка](https://www.aliexpress.com/item/1005005184865336.html) | 2 |
+| ![](../../img/bom-rod.png) | Rod Bar for Motor Shaft Ø3 × 90 mm | [ссылка](https://www.aliexpress.com/item/1005005184865336.html) | 2 |
 | ![](../../img/bom-screw-iso7380.png) | M3\*25 ISO7380 | | 6 |
 | ![](../../img/bom-screw-iso7380.png) | M3\*16 ISO7380 | | 4 |
 | ![](../../img/bom-screw-iso7380.png) | M3\*6 ISO7380 | | 18 |

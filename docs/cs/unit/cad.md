@@ -1,6 +1,8 @@
 
 # Modelle zum Drucken
 
+!!! info "Spotřeba materiálu"
+    Tisk standardního krytu iDryer Unit při doporučených nastaveních vyžaduje méně než 1 kg filamentu.
 
 === "iDryer v4 stl"
 

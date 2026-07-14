@@ -1,6 +1,8 @@
 
 # Modelle zum Drucken
 
+!!! info "Consommation de matière"
+    L'impression du boîtier standard iDryer Unit avec les paramètres recommandés nécessite moins de 1 kg de filament.
 
 === "iDryer v4 stl"
 

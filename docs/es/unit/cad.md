@@ -1,6 +1,8 @@
 
 # Modelle zum Drucken
 
+!!! info "Consumo de material"
+    La impresión de la carcasa estándar de iDryer Unit con la configuración recomendada requiere menos de 1 kg de filamento.
 
 === "iDryer v4 stl"
 

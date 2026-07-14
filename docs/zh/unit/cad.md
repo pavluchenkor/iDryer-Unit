@@ -1,6 +1,8 @@
 
 # Modelle zum Drucken
 
+!!! info "材料用量"
+    按照推荐设置打印标准 iDryer Unit 外壳需要不到 1 公斤的耗材。
 
 === "iDryer v4 stl"
 

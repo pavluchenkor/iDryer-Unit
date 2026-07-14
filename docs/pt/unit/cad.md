@@ -1,6 +1,8 @@
 
 # Modelle zum Drucken
 
+!!! info "Consumo de material"
+    A impressão do gabinete padrão do iDryer Unit nas configurações recomendadas requer menos de 1 kg de filamento.
 
 === "iDryer v4 stl"
 
