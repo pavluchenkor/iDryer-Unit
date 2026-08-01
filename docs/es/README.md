@@ -125,5 +125,5 @@ Cada bloque es una cámara de secado independiente con su propio sensor, calenta
 3. **Ensamblen el dispositivo** → [Montaje](unit/assembly.md)
 4. **Instale el firmware**:
    - Klipper → [Firmware Klipper](controller/firmware.md)
-   - Standalone → [Instalación de Standalone](../../../iDryerRP2040/docs/manual/firmware_install.md)
+   - Standalone → [Instalación de Standalone](../../../сontroller-v2/installation/firmware-install/)
 5. **Configure el sistema** → [Guía del usuario](controller/user-guide.md)

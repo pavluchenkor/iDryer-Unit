@@ -125,5 +125,5 @@ Jeder Block ist eine unabhängige Trocknungskammer mit eigenem Sensor, Heizer, L
 3. **Gerät montieren** → [Montage](unit/assembly.md)
 4. **Firmware installieren**:
    - Klipper → [Klipper Firmware](controller/firmware.md)
-   - Standalone → [Standalone Installation](../../../iDryerRP2040/docs/manual/firmware_install.md)
+   - Standalone → [Standalone Installation](../../../сontroller-v2/installation/firmware-install/)
 5. **System konfigurieren** → [Benutzerhandbuch](controller/user-guide.md)

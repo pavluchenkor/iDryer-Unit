@@ -125,5 +125,5 @@ Každý blok — nezávislá sušicí komora s vlastním senzorem, topidlem, ven
 3. **Sestavte zařízení** → [Montáž](unit/assembly.md)
 4. **Nainstalujte firmware**:
    - Klipper → [Firmware Klipperu](controller/firmware.md)
-   - Standalone → [Instalace Standalone](../../../iDryerRP2040/docs/manual/firmware_install.md)
+   - Standalone → [Instalace Standalone](../../../сontroller-v2/installation/firmware-install/)
 5. **Nakonfigurujte systém** → [Uživatelská příručka](controller/user-guide.md)
