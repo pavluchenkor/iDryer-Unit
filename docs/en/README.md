@@ -50,7 +50,7 @@ Suitable if:
 - you need remote control via mobile app or portal;
 - you use multiple dryers with a single control point.
 
-→ [Standalone: about firmware](../../../iDryerRP2040/README.md)
+<!-- → [Standalone: about firmware](../../../iDryerRP2040/README.md) -->
 
 ---
 

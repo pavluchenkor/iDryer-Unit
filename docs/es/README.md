@@ -50,7 +50,7 @@ Es adecuado si:
 - necesita control remoto a través de una aplicación móvil o portal;
 - utiliza varios secadores con un único punto de control.
 
-→ [Standalone: sobre firmware](../../../iDryerRP2040/README.md)
+<!-- → [Standalone: sobre firmware](../../../iDryerRP2040/README.md) -->
 
 ---
 

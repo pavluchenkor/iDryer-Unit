@@ -50,7 +50,7 @@ Vhodné, pokud:
 - potřebujete vzdálené řízení přes mobilní aplikaci nebo portál;
 - používáte několik sušiček s jedním bodem řízení.
 
-→ [Standalone: o firmware](../../../iDryerRP2040/README.md)
+<!-- → [Standalone: o firmware](../../../iDryerRP2040/README.md) -->
 
 ---
 
