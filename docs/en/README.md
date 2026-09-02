@@ -125,5 +125,5 @@ Each unit is an independent drying chamber with its own sensor, heater, fan, and
 3. **Assemble the device** → [Assembly](unit/assembly.md)
 4. **Install firmware**:
    - Klipper → [Klipper Firmware](controller/firmware.md)
-   - Standalone → [Standalone installation](../../../сontroller-v2/installation/firmware-install/)
+   - Standalone → [Standalone installation](../controller-v2/installation/firmware-install/)
 5. **Configure the system** → [User guide](controller/user-guide.md)

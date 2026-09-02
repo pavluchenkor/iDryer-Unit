@@ -125,5 +125,6 @@ iDryer Unit — DIY-проект для тех, кто хочет надёжну
 3. **Соберите устройство** → [Сборка](unit/assembly.md)
 4. **Установите прошивку**:
    - Klipper → [Прошивка Klipper](controller/firmware.md)
-   - Standalone → [Установка Standalone](../../../сontroller-v2/installation/firmware-install/)
+   - Standalone → [Установка Standalone](../controller-v2/installation/firmware-install/)
 5. **Настройте систему** → [Руководство пользователя](controller/user-guide.md)
+    

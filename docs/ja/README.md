@@ -125,5 +125,5 @@ Klipperの追加機能が利用可能です：Telegramボットを通じた通�
 3. **デバイスを組立** → [組立](unit/assembly.md)
 4. **ファームウェアをインストール**：
    - Klipper → [Klipperファームウェア](controller/firmware.md)
-   - Standalone → [Standalone インストール](../../../сontroller-v2/installation/firmware-install/)
+   - Standalone → [Standalone インストール](../controller-v2/installation/firmware-install/)
 5. **システムを設定** → [ユーザーガイド](controller/user-guide.md)
