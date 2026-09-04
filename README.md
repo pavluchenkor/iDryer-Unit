@@ -121,3 +121,18 @@ Another excellent option is to reuse an old printer board as an MCU, with solid-
 [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red?style=for-the-badge\&logo=youtube)](https://www.youtube.com/@iDryerProject)
 [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue?style=for-the-badge\&logo=github)](https://github.com/pavluchenkor/iDryer-Unit)
 [![Discord](https://img.shields.io/discord/123456789012345678?label=Discord\&logo=discord\&logoColor=white\&color=5865F2\&style=for-the-badge)](https://discord.gg/jGce5eeHHz)
+
+## License
+
+Licensed under the Apache License, Version 2.0 — see [LICENSE](LICENSE) and
+[NOTICE](NOTICE).
+
+You may use, modify, distribute and sell this software, including for
+commercial purposes.
+
+The license does not grant rights to the iDryer name. Community projects are
+welcome and the naming policy is permissive — see
+[TRADEMARKS.md](https://github.com/pavluchenkor/idryer-core/blob/main/TRADEMARKS.md).
+
+Hardware design and mechanical documentation are licensed separately and are
+not covered by this license.
