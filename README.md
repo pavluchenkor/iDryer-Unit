@@ -1,138 +1,211 @@
-![iDryer Unit Master](docs/img/iDryer.png)
+<div align="center">
 
-[![Discord](https://img.shields.io/badge/discord-Join%20Chat-5865F2?logo=discord)](https://discord.gg/jGce5eeHHz)
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue)](https://t.me/iDryer)  [![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red)](https://www.youtube.com/@iDryerProject) [![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue)](https://github.com/pavluchenkor/iDryer-Unit) 
+<img src="docs/img/iDryer_logo_small.png" width="220" alt="iDryer">
 
-# iDryer Unit - Filament Drying System for 3D Printers Based on Klipper
+# iDryer Unit
 
-### Project Release
+**A modular filament dryer you print and build yourself. Up to four chambers, up to 110 °C.**
 
-![iDryer Unit Master](img/iDryerWithSpool.png)
+[![Documentation](https://img.shields.io/badge/docs-idryer.org-e7352c)](https://docs.idryer.org/en/projects/idryer/unit/) [![Telegram](https://img.shields.io/badge/Telegram-iDryer-2ca5e0)](https://t.me/iDryer) [![Discord](https://img.shields.io/badge/Discord-join-5865f2)](https://discord.gg/jGce5eeHHz) [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
 
-This project is a modular filament drying control system for 3D printers. It supports up to four drying units, each with individual temperature and humidity settings. The system allows setting temperatures up to 90°C and includes a storage mode that maintains minimal humidity to prevent filament reabsorption.
+<img src="docs/img/iDryer.png" width="420" alt="iDryer Unit">
 
-Additionally, iDryer Unit supports connection to a Telegram bot to receive notifications about drying status, process completion, and events like overheating. For visual indication, addressable LEDs can be used-an output on the MCU board allows connecting an LED strip to display various states (e.g., active drying mode, cycle completion, or errors). The system can leverage Klipper functionality to show temperature, humidity, remaining drying time, automatically log events, and integrate with macros. It also supports advanced user profiles and extended scenarios such as scheduled startup, critical event alerts, and lighting features like color changes between modes.
-
-![iDryer Unit Master](img/klipper222252.jpg)
-
-## Key Features
-
-![iDryer Unit Master](img/IMG_2186.jpg)
-
-* **Operating Modes: Drying and Storage.** Drying filament up to 90°C and maintaining ideal temperature and humidity for storage.
-
-* **Modular Design:**
-
-  * **iDryer Unit MCU** - main control unit with microcontroller.
-
-  * **iDryer Unit EXT** - expansion modules without microcontrollers, connectable to the MCU unit. Up to three EXT units can be added.
-
-* **Klipper Integration:** Display all drying parameters within Klipper interface.
-
-* **Telegram Bot Notifications:** Receive real-time updates about status and process completion.
-
-* **Visual Indication:** Addressable LEDs display current operating modes.
-
-* **Printable Enclosure:** Available for one or two spools. Compatible with spools up to 85 mm wide and 200 mm in diameter. Can be printed using ABS or other suitable filament.
-
-* **System Scalability:** Supports up to four drying units with individual settings. Each dryer can handle one or two spools simultaneously.
-
-* **Add-on Module Support:** Additional dryers connect via patch cords using RJ45 connectors for reliable communication.
-
-* **Centralized Architecture:** One dryer unit has an MCU and acts as the controller, while others are peripherals. iDryer can also be set up as a standalone Klipper instance or as a secondary MCU connected to the main printer board.
-
-* **Safety:** Includes 130°C KSD9700 thermostat and Klipper safety mechanisms.
-
-* **Drying Efficiency:** Features a humidity sensor and a servo-driven damper to manage chamber ventilation and achieve optimal drying results.
-  ![iDryer Unit Master](img/IMG_2168.jpg)
-  ![iDryer Unit Master](img/IMG_2170.jpg)
-
-## Benefits of Use
-
-* **Improved Print Quality:** Dry filament ensures consistent extrusion and better print results.
-* **Time Savings:** Simultaneous drying of multiple spools.
-* **Efficiency:** Boosts productivity by reducing drying time.
-* **Flexibility:** Expandable and customizable for specific needs.
-* **Visualization:** LED feedback enables quick device status assessment.
-* **Safety:** Both hardware and firmware safety measures ensure secure operation.
-
-## Technical Details
-
-* **iDryer Unit MCU:** Main controller block with microcontroller.
-* **iDryer Unit EXT:** Expansion module without microcontroller.
-* **MCU:** Manages the main dryer and coordinates additional modules. Default connection is U1; U2-U4 are optional. iDryer can function as a separate Klipper instance or as a second MCU within a single Klipper setup.
-* **Thermostat KSD9700:** 130°C bimetallic thermostat for emergency protection.
-* **Temperature Range:** Drying up to 90°C, suitable for most filament types.
-* **Connection Interfaces:** RJ45 connectors simplify installation and ensure reliable connections.
-* **LED Output:** Allows connecting addressable LED strips for visual feedback.
-
-## Operating Modes
-
-**1. Drying Mode (DRYING)**
-
-* Set temperature and drying duration.
-* Automatically switches to storage mode upon completion.
-
-**2. Storage Mode (STORAGE)**
-
-* Maintains target temperature and humidity.
-* Activates heater and fan if thresholds are exceeded.
-
-## Setup and Configuration
-
-**Connection:** Link additional modules to the main dryer using RJ45 patch cords. U1 connects by default; U2-U4 can be added by including the appropriate config files.
-
-## Requirements
-
-* 3D printer with up-to-date Klipper firmware.
-* iDryer board with MCU for the main dryer.
-* KSD9700 thermostat (130°C) per dryer.
-* RJ45 patch cords and connectors to link expansion modules.
-* Extra iDryer Unit control boards depending on the number of dryers used.
+</div>
 
 ---
+## What it is
 
-## Feedback
+A filament dryer built from off-the-shelf parts in a printed enclosure. One chamber or four, one spool per chamber or two.
 
-If you have questions or suggestions for improvement, please open an issue in the repository or reach out directly.
+Every part it is made of can be bought in a regular shop and replaced when needed: fan, PTC heater, temperature and humidity sensor, servo, thermal cutoff. There are no proprietary spares here.
 
-Or join the Telegram group.
+<div align="center">
 
-## Notes
+<img src="docs/img/iDryerWithSpool.png" width="520" alt="iDryer Unit with a spool">
 
-* Ensure temperature and humidity sensors (e.g., SHT3X or alternatives) are connected correctly.
-* PID tuning may be needed for optimal temperature control.
-* Use macros to monitor temperature and humidity readings for precise drying conditions.
-* This project is under active development.
+</div>
 
-***Warning: Using heating elements and temperature control involves fire risk and potential equipment damage. Always follow manufacturer guidelines and adhere to electrical safety precautions. Never leave operating devices unattended.***
+## What problem it solves
 
-### DIY Version from Scrap Materials
+Engineering filaments pick up moisture from the air, and a part printed from wet material comes out worse than it should: bubbles, weak layers, shrinkage you cannot predict. A consumer dryer applies heat, but gives you neither control nor repeatability, and it handles one spool.
 
-You can build a prototype of the iDryer Unit yourself on a minimal budget. This is a prototype and should be treated accordingly.
+iDryer Unit dries to a defined program, shows you what is happening inside, and runs up to four chambers at once. Each with its own material and its own settings.
 
-[EasyEDA Project](https://oshwlab.com/pavluchenko.r/2channel-dimmer-bread-board)
+## Who it is for
 
-### Using a Printer Board
+This project is for people who want a tool, not a heated box, and who are ready to build it themselves.
 
-Another excellent option is to reuse an old printer board as an MCU, with solid-state relays to control 110-220V loads.
+Off-the-shelf dryers are closed. The heater dies and you hunt for a proprietary part; you dislike the control logic and you live with it. Here it is the opposite: schematics, firmware and documentation are open, the enclosure prints on any printer, and any component swaps for an equivalent from most marketplaces.
 
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-blue?style=for-the-badge\&logo=telegram)](https://t.me/iDryer)
-[![YouTube](https://img.shields.io/badge/YouTube-Watch%20video-red?style=for-the-badge\&logo=youtube)](https://www.youtube.com/@iDryerProject)
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Project-blue?style=for-the-badge\&logo=github)](https://github.com/pavluchenkor/iDryer-Unit)
-[![Discord](https://img.shields.io/discord/123456789012345678?label=Discord\&logo=discord\&logoColor=white\&color=5865F2\&style=for-the-badge)](https://discord.gg/jGce5eeHHz)
+## Two firmware options
+
+You choose the scenario after assembly. It determines both the firmware and how you control the dryer.
+
+### Klipper
+
+<div align="center">
+
+<img src="docs/img/klipper222252.jpg" width="520" alt="iDryer Unit in the Klipper interface">
+
+</div>
+
+The controller connects to the printer host and runs as `[mcu]` or `[second_mcu]`. You control it straight from Fluidd or Mainsail, with temperature and humidity on the same screen as the print. G-code macros, Telegram bot notifications and an addressable LED strip for mode indication are available.
+
+Use this if Klipper is already running for you and you want everything in one interface.
+
+→ [Klipper firmware installation](https://docs.idryer.org/en/projects/idryer/unit/controller/firmware/)
+
+### Standalone
+
+The controller runs on its own, with its own firmware. You control it through the [portal](https://portal.idryer.org/) and the mobile app, or locally through the screen. This mode also adds scales, RFID and profile handling.
+
+Use this if the dryer sits away from the printer or you need remote control.
+
+→ [iDryer Controller V2](https://github.com/pavluchenkor/iDryerControllerV2)
+
+## Portal and app
+
+<div align="center">
+
+<img src="docs/img/portal1.png" width="420" alt="Portal: device overview"> <img src="docs/img/portal2.png" width="420" alt="Portal: spool tracking">
+
+</div>
+
+<div align="center">
+
+<img src="docs/img/app-01-home.png" width="230" alt="App: home screen"> <img src="docs/img/app-02-device.png" width="230" alt="App: device card"> <img src="docs/img/app-03-session.png" width="230" alt="App: session report">
+
+</div>
+
+In Standalone mode every drying run is recorded: how long it ran, how far the humidity dropped, how much water was removed, how steadily the temperature held.
+
+- [iDryer on the App Store](https://apps.apple.com/app/idryer/id6760609044)
+- [iDryer on Google Play](https://play.google.com/store/apps/details?id=org.idryer.mobile)
+
+## How the system is built
+
+A single **MCU** block controls everything. Up to three **EXT** blocks connect to it over RJ45, without a microcontroller of their own.
+
+```
+              ┌— RJ45 — [EXT U2]
+[MCU] ————————┼— RJ45 — [EXT U3]
+              └— RJ45 — [EXT U4]
+```
+
+Each block is an independent chamber with its own sensor, heater, fan and damper.
+
+## Humidity control
+
+<div align="center">
+
+<img src="docs/img/IMG_2168.jpg" width="400" alt="Damper"> <img src="docs/img/IMG_2170.jpg" width="400" alt="Damper mechanism">
+
+</div>
+
+Each chamber has a servo-driven damper. It opens to release moisture-laden air and closes to hold heat. The sensor tracks temperature and humidity inside continuously, and the firmware adjusts the damper and the heater to what is actually happening in the chamber.
+
+## Specifications
+
+| Parameter | Value |
+|---|---|
+| Drying temperature | up to 90 °C, up to 110 °C with a heat-resistant enclosure |
+| Modes | drying, storage, profiles |
+| Number of chambers | 1–4: MCU plus up to three EXT |
+| Module interconnect | RJ45 patch cords |
+| Spools | 1 or 2 per chamber, up to 85 mm wide and 200 mm in diameter |
+| Enclosure | printed, ABS / ABS-CF / PC / HTPLA |
+| Heater | PTC, fully electrically isolated |
+| Sensor | SHT3X or any sensor supported by the firmware |
+| Thermal cutoff | KSD9700, 130 °C |
+| Overcurrent protection | fuse |
+
+## Safety
+
+The device runs on 110–230 V mains and heats for hours, so protection is built into both the hardware and the firmware.
+
+**KSD9700** physically breaks the heater circuit on overheating, regardless of what the firmware thinks. The **fuse** clears fault currents. The **PTC heater** is built so that its body is not live. The firmware monitors temperature and sensor presence and cuts the heat on error.
+
+> **Mains voltage inside.** Disconnect power before any electrical work. This is an electric heating appliance. Never leave it running unattended.
+
+→ [Safety section](https://docs.idryer.org/en/projects/idryer/unit/unit/safety/)
+
+## What you need (BOM)
+
+Per chamber: 100 W PTC heater, blower fan, damper servo, SHT31 sensor, KSD9700 thermal cutoff, OLED screen with an encoder, LED strip, fasteners and wiring.
+
+The full list with photos, quantities and ordering links is in the [bill of materials](https://docs.idryer.org/en/projects/idryer/unit/unit/bom/).
+
+Printable models are in the [CAD section](https://docs.idryer.org/en/projects/idryer/unit/unit/cad/).
+
+### Controller
+
+Ready-made boards: **MCU** is the main board, with the microcontroller and three RJ45 connectors, and **EXT** is one board per additional chamber, without a microcontroller of its own.
+
+You can also build the controller yourself. The documentation covers the RP2040 and connector pinouts, a breadboard prototype project, and a variant using an old printer board with solid-state relays.
+
+→ [MCU and EXT boards](https://docs.idryer.org/en/projects/idryer/unit/controller/board/) · [DIY build](https://docs.idryer.org/en/projects/idryer/unit/controller/diy/)
+
+## Difficulty and cost
+
+| | |
+|---|---|
+| Soldering | required |
+| 3D printing | enclosure and mechanics, ABS or another heat-resistant filament |
+| **Hazardous voltage** | **yes, 110–230 V** |
+| Skills | assembly by instructions, working with mains voltage |
+| Time | one evening to assemble a single chamber |
+
+## Quick start
+
+1. **Choose the scenario**: Klipper or Standalone. It determines the firmware.
+2. **Order the parts** from the [bill of materials](https://docs.idryer.org/en/projects/idryer/unit/unit/bom/).
+3. **Print the enclosure** using the [models](https://docs.idryer.org/en/projects/idryer/unit/unit/cad/).
+4. **Assemble it** following the [instructions](https://docs.idryer.org/en/projects/idryer/unit/unit/assembly/).
+5. **Flash and configure**: [Klipper](https://docs.idryer.org/en/projects/idryer/unit/controller/firmware/) or Standalone via [install.idryer.org](https://install.idryer.org/).
+
+## Where it fits in the ecosystem
+
+| Layer | What it does | Repository |
+|---|---|---|
+| Dryer | Enclosure, mechanics, schematics: **this repository** | iDryer-Unit |
+| Controller | Standalone firmware | [iDryerControllerV2](https://github.com/pavluchenkor/iDryerControllerV2) |
+| Connectivity | Wi-Fi, portal, app | [iDryer Link](https://github.com/pavluchenkor/iDryer-Link) |
+| Connectivity with a screen | The same plus a touch display | [iDryer Touch](https://github.com/pavluchenkor/idryer-touch) |
+| Cloud | Portal, app, integrations | [portal.idryer.org](https://portal.idryer.org/) |
+
+## Status
+
+The project is released. Enclosures for one and two spools, both firmware options in service: Klipper and Standalone.
+
+## What is in this repository
+
+| Path | What it is |
+|---|---|
+| `CAD/` | Enclosure and mechanics models for printing |
+| `iDryer_mcu/` | Firmware for the main block |
+| `iDryer_second_mcu/` | Firmware for running as a second MCU in Klipper |
+| `User-mods/` | Community modifications |
 
 ## License
 
-Licensed under the Apache License, Version 2.0 — see [LICENSE](LICENSE) and
-[NOTICE](NOTICE).
+Code, CAD models, drawings and mechanics: [GNU GPL v3.0 or later](LICENSE), [NOTICE](NOTICE).
 
-You may use, modify, distribute and sell this software, including for
-commercial purposes.
+PCBs and schematics are not published.
 
-The license does not grant rights to the iDryer name. Community projects are
-welcome and the naming policy is permissive — see
-[TRADEMARKS.md](https://github.com/pavluchenkor/idryer-core/blob/main/TRADEMARKS.md).
+The iDryer name is not covered by the license: [TRADEMARKS.md](https://github.com/pavluchenkor/idryer-core/blob/main/TRADEMARKS.md).
 
-Hardware design and mechanical documentation are licensed separately and are
-not covered by this license.
+## Help
+
+- [Telegram](https://t.me/iDryer)
+- [Discord](https://discord.gg/jGce5eeHHz)
+- [Documentation](https://docs.idryer.org/en/projects/idryer/unit/)
+
+Guides and teardowns on the channel: [YouTube](https://www.youtube.com/@iDryerProject) · [Rutube](https://rutube.ru/channel/34401569/)
+
+## Contributing
+
+Built your own version, improved the enclosure, found an error in the instructions? Open an issue or send a pull request. Community modifications live in `User-mods/`.
+
+## Next
+
+[Look through the bill of materials](https://docs.idryer.org/en/projects/idryer/unit/unit/bom/): it shows what the build will cost you.
