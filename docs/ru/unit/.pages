@@ -4,3 +4,4 @@ nav:
   - CAD: cad.md
   - Перед сборкой: before.md
   - Сборка: assembly.md
+  - BOM: bom.md

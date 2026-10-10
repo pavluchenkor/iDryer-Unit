@@ -4,3 +4,4 @@ nav:
   - CAD: cad.md
   - 組裝前: before.md
   - 組裝: assembly.md
+  - BOM: bom.md

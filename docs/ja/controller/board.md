@@ -1,9 +1,15 @@
-<!-- i18n-placeholder: true -->
+# コントローラー
 
-# Translation wanted
+システムは2つのタイプの基板で構成されます: MCU メインボードと EXT 拡張ボード。
 
-This page is not available in this language yet.
+## iDryer Unit MCU
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+マイクロコントローラー搭載のメインボード。システム全体を制御します: センサーの読み取り、ヒーター、ファン、ダンパーサーボの駆動を管理します。ホストへの接続は USB-C です。EXT ブロック接続用の 3 つの RJ45 コネクタがあります。
 
-Thank you for helping make the documentation available to more makers.
+![MCU基板](../../img/MCU_PCB.png)
+
+## iDryer Unit EXT
+
+マイクロコントローラーを搭載していない拡張基板。RJ45 パッチコードを通じて MCU に接続され、MCU により直接制御されます。追加の乾燥ブロック 1 つあたり 1 つの EXT 基板が必要です。
+
+![EXT基板](../../img/EXT_PCB.png)

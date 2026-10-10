@@ -1,9 +1,32 @@
-<!-- i18n-placeholder: true -->
+## 安全性
 
-# Translation wanted
+控制器固件 — Klipper 或 Standalone — 提供软件保护：
 
-This page is not available in this language yet.
+- 使用热敏电阻进行温度监控;
+- 检查温度传感器连接;
+- 防止温度超出安全范围;
+- 系统故障时使用定时器;
+- 传感器或控制器错误时自动关闭。
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+此外，还实施了硬件保护：
 
-Thank you for helping make the documentation available to more makers.
+安装了热保护装置 KSD9700 (130°C)，在过热时物理断开加热元件的电源。这对于任何软件或硬件故障都至关重要。
+
+控制器配备 2 A 保险丝，保护设备。发生故障时，保险丝熔断，整个系统完全断电。
+
+使用具有完全电气隔离的 PTC 加热元件。与大多数加热解决方案不同，PTC 加热器外壳不带电压，消除了 3D 打印机室安装和维护时的触电风险。
+
+这样的多级保护系统使 iDryer Unit 成为一种安全的灯丝干燥解决方案，即使在长时间持续运行期间也是如此。
+
+!!! warning "热敏电阻安装"
+    确保热敏电阻底部的裸露电线部分不与加热器的金属外壳接触。如有必要，用卡普顿胶带隔离这些区域或将其放在特氟隆管/热收缩管中。
+
+    请记住，加热器温度可达 140°C。
+
+!!! danger "KSD9700 — 不是最终保护"
+    KSD9700（热保护装置）是一种自动复位设备：过热时打开电路，但一旦温度降至阈值以下，就会自动重新闭合。如果加热器出故障，设备会在没有干预的情况下周期性地过热和冷却。这不是紧急关闭 — 这是无限循环过热。
+
+    对于持续运行，用一次性热熔断器（例如 **RH130**）替换 KSD9700。触发时永久断开电路 — 设备关闭，在更换前保持安全状态。
+
+!!! note "推荐顺序"
+    在组装和调试期间使用 KSD9700。验证功能后，用热熔断器替换它。

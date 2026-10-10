@@ -1,9 +1,15 @@
-<!-- i18n-placeholder: true -->
+# 控制器
 
-# Translation wanted
+系統基於兩種類型的電路板構建：主要控制單元 MCU 和擴展模組 EXT。
 
-This page is not available in this language yet.
+## iDryer Unit MCU
 
-You can help the iDryer project by translating this article. Please use the English or Russian version as the source, check the meaning carefully, and submit your translation as a pull request to the documentation repository.
+帶有微控制器的主電路板。管理整個系統：讀取感測器、控制加熱器、風扇和擋板伺服馬達。與主機的連接使用 USB-C。三個 RJ45 接頭用於連接 EXT 模組。
 
-Thank you for helping make the documentation available to more makers.
+![MCU 電路板](../../img/MCU_PCB.png)
+
+## iDryer Unit EXT
+
+不含微控制器的擴展電路板。通過 RJ45 網線連接到 MCU，由 MCU 直接控制。每個額外的乾燥腔室需要一個 EXT 電路板。
+
+![EXT 電路板](../../img/EXT_PCB.png)

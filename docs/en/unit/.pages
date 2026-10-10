@@ -4,3 +4,4 @@ nav:
   - CAD: cad.md
   - Before assembly: before.md
   - Assembly: assembly.md
+  - BOM: bom.md
