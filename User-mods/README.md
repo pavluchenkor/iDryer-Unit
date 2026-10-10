@@ -2,7 +2,7 @@
 
 This guide is for users who want to add their own mods to this repository. Please follow the instructions below step by step to ensure your mod is correctly structured and easy to understand for others.
 
-**Important: Original files are provided under the CC BY-NC-SA license. Any modifications or derivatives must be shared in this repository in accordance with the license terms and the repository submission guidelines. Commercial use is strictly prohibited.**
+**Important: Original files are provided under the GNU GPL v3.0 or later license. Any modifications or derivatives must be shared in this repository under the same license and in accordance with the repository submission guidelines.**
 
 ---
 ## 1. Fork the Repository (Required)
